@@ -1,5 +1,5 @@
 # **Final Project:** Ratings On Demand
-## Using Machine Learning to Predict IMBd Moive Scores
+Using Machine Learning to Predict IMBd Moive Scores
 
 ## Resourses:
 
