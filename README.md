@@ -5,6 +5,6 @@
 
 **Software:** Python, AWS, Pandas, PostgreSQL, Javascipt, CSS, HTML, D3, 
 
-**Data Sources GeoJSON Files:** 
+**Data Sources:**
 
 ## Summary:
