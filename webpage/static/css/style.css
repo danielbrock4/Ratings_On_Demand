@@ -4,7 +4,8 @@ body {
     font-family: "PT Sans";
     color: "white"
 }
-.jumbotron {/*  tells the stylesheet to apply the changes only to divs with a class of "jumbotron."*/
+
+.jumbotron.one {/*  tells the stylesheet to apply the changes only to divs with a class of "jumbotron."*/
     background-size: 100% 100%;/*The size of the background is set to span the entire width and height of the element, no matter the size of the viewport. */
     color: #f7f7f7; /*We've aligned the text to be in the center of the element.*/
     background-image: url("https://miro.medium.com/max/10000/1*BNI3K8QDkL8rhFiG-jvFrQ.jpeg"); /*We specify a background image, then tell the code where the image is stored.*/
