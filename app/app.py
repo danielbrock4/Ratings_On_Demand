@@ -1,8 +1,6 @@
 # # Use Flask to render a template, redirecting to another url, and creating a URL
 from flask import Flask, render_template, url_for, redirect, jsonify
 
-import os
-
 # postgres_user = os.environ.get("POSTGRES_USER", None)
 
 # Set Up Flask
@@ -32,7 +30,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('base.html')
 
 # @app.route('/get-help')
 # def get_help():
