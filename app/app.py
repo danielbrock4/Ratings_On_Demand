@@ -1,13 +1,25 @@
 # # Use Flask to render a template, redirecting to another url, and creating a URL
+from email import header
 from flask import Flask, render_template, url_for, redirect, jsonify
+import pandas as pd
+import numpy as np
+from pandas import DataFrame, read_csv
+from sqlalchemy import create_engine
+
 
 # Set Up Flask
     # To define our Flask app we will create a Flask application called "app."
 app = Flask(__name__)
 
+
+
+engine = create_engine('postgresql+psycopg2://postgres:moviesondemand@moviesondemandaws.cfwjiare7kds.us-east-2.rds.amazonaws.com:5432/postgres')
+main_df = pd.read_sql_table('consolidated_pre_transformation', con=engine)
+
+
 @app.route('/')
 def index():
-    return render_template('base.html')
+    return render_template('base.html', tables=[main_df.to_html()], titles= ["na"])
 
 
 # Python program to use main for function call.

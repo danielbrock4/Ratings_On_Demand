@@ -50,3 +50,8 @@ body {
     text-align: center; 
     font-size: 300x;
 }
+
+table.dataframe, .dataframe th, .dataframe td {
+    font-size: 0.9em;
+    color: white
+  }
