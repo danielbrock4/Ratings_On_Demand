@@ -19,32 +19,33 @@
     font-family: PT Sans;
   }
 
-  body {
-    background-color: black;
-    font-family: "PT Sans";
-    color: "white";
-    background-image: url("../images/cover_photo.jpeg")
+body{
+  background-image: url("https://miro.medium.com/max/10000/1*BNI3K8QDkL8rhFiG-jvFrQ.jpeg");
 }
 
-  .navbar-text{
-    color: white;
-  }
+.navbar-text{
+    color: black;
+}
 
-  .navbar-brand{
-    color: white;
-    font-family: PT Sans;
-    font-size: 2.5rem; 
-  }
+.navbar{
+  background-color: #ffd500;
+}
 
+.navbar-brand{
+  color: black;
+  font-family: Impact, fantasy;
+  font-size: 4rem; 
+}
 
 .navbar-brand:hover{
-  color: rgb(250, 250, 250);
-  font-family: PT Sans;
+  color: white;
+  font-family: Impact, fantasy;
 }
 
-.site-header-logo h1{
-    color: white;
-    font-family: PT Sans;
-    font-size: 3rem;
-    margin-top: 2rem;
-  }
+.navbar-item{
+  color: black;
+}
+
+.text-center.h1{
+  font-family: Impact, fantasy;
+}
