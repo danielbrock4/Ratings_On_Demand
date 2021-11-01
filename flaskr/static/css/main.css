@@ -34,7 +34,7 @@ body{
 .navbar-brand{
   color: black;
   font-family: Impact, fantasy;
-  font-size: 4rem; 
+  font-size: 3rem; 
 }
 
 .navbar-brand:hover{
@@ -46,6 +46,29 @@ body{
   color: black;
 }
 
-.text-center.h1{
+.nav-link{
   font-family: Impact, fantasy;
+  color: black;
+}
+
+.nav-link:hover{
+  color: white;
+}
+
+.card-body{
+  font-family: Impact, fantasy;
+}
+
+.card-text{
+  font-family: PT Sans;
+}
+
+.card-link{
+  font-family: PT Sans;
+}
+
+.card-header{
+  font-family: Impact, fantasy;
+  color: black;
+  font-size: 2rem; 
 }
