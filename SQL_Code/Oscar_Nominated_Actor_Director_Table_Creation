@@ -1,0 +1,95 @@
+CREATE TABLE IMDB_Awards ( 
+	
+eventId text,
+eventName text,
+awardName text,
+year text,
+categoryName text,
+isWinner text,
+isPrimary text,
+isSecondary text,
+isPerson text,
+isTitle text,
+isCompany text,
+const text
+
+ )
+ 
+ 
+ CREATE TABLE IMDB_Names ( 
+	
+imdb_name_id text,
+name text,
+
+PRIMARY KEY (imdb_name_id)
+ )
+
+CREATE TABLE IMDB_Titles_Principals ( 
+
+	
+imdb_title_id varchar(255),
+ordering integer,
+imdb_name_id varchar(255),
+category varchar(255)
+)
+
+
+--Filter awards table to oscar nominated best director and actor/actress awards
+
+CREATE TABLE Oscar_Nominated AS 
+ SELECT Distinct
+   const as ID,
+   1 as Oscar
+  FROM imdb_awards
+  
+    where eventname = 'Academy Awards, USA'and
+	      awardname = 'Oscar' and
+		  categoryname in ('Best Director', 'Best Actor in a Leading Role', 'Best Actor in a Supporting Role', 'Best Actress in a Leading Role' , 'Best Actress in a Supporting Role')
+		  and left(const, 2) = 'nm'
+;
+
+
+--Create new table for the count of oscar nominated actors that played in each movie
+
+CREATE TABLE NumberOf_Oscar_Nominated_Actors As
+
+Select
+
+tp.imdb_title_id,
+sum(COALESCE(oscar_nominated.oscar,0)) as Number_Of_Oscar_Nominee_Actors
+
+
+From imdb_titles_principals as tp
+
+Left Join oscar_nominated on  tp.imdb_name_id = oscar_nominated.id
+
+
+Where category in ('actor' , 'actress')
+
+Group By tp.imdb_title_id
+
+--Create new table for the oscar_nominated directors who directed each movie
+
+CREATE TABLE Oscar_Nominated_Directors As
+
+Select
+
+tp.imdb_title_id,
+sum(COALESCE(oscar_nominated.oscar,0)) as Oscar_Nominated_Directors
+
+
+From imdb_titles_principals as tp
+
+Left Join oscar_nominated on  tp.imdb_name_id = oscar_nominated.id
+
+
+Where category in ('director')
+
+Group By tp.imdb_title_id
+
+Left Join oscar_nominated on  tp.imdb_name_id = oscar_nominated.id
+
+
+Where category in ('director')
+
+Group By tp.imdb_title_id
