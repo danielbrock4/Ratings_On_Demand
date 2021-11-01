@@ -1,4 +1,4 @@
-/* @font-face {
+@font-face {
     font-family: "lobsterregular";
     src: url("./fonts/lobster-regular-webfont.woff2") format("woff2"),
       url("./fonts/lobster-regular-webfont.woff") format("woff");
@@ -12,11 +12,11 @@
       url("./fonts/worksans-variablefont_wght-webfont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
-  } */
+  }
 
   * { padding: 0%;
     margin: 0%;
-    font-family: PT Sans;
+    font-family: lobsterregular;
   }
 
 body{
@@ -55,20 +55,39 @@ body{
   color: white;
 }
 
+/* Will Not Connect */
 .card-body{
   font-family: Impact, fantasy;
 }
 
+/* Will Not Connect */
 .card-text{
-  font-family: PT Sans;
+  font-family: lobsterregular;
 }
 
+/* Will Not Connect */
 .card-link{
-  font-family: PT Sans;
+  font-family: lobsterregular;
 }
 
 .card-header{
   font-family: Impact, fantasy;
   color: black;
   font-size: 2rem; 
+}
+
+.btn{
+  font-family: Impact, fantasy;
+  background-color: #ffd500;
+  color: black;
+}
+
+.list-group{
+  font-family: Impact, fantasy;
+}
+
+.card-one{
+  font-family: Impact, fantasy;
+  background-color: blue;
+  color: black;
 }
