@@ -65,11 +65,6 @@ body{
   font-family: lobsterregular;
 }
 
-/* Will Not Connect */
-.card-link{
-  font-family: lobsterregular;
-}
-
 .card-header{
   font-family: Impact, fantasy;
   color: black;
@@ -79,15 +74,5 @@ body{
 .btn{
   font-family: Impact, fantasy;
   background-color: #ffd500;
-  color: black;
-}
-
-.list-group{
-  font-family: Impact, fantasy;
-}
-
-.card-one{
-  font-family: Impact, fantasy;
-  background-color: blue;
   color: black;
 }
