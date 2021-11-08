@@ -18,6 +18,14 @@ Using Machine Learning to Predict IMBd Movies Scores
 
 ### **Data Sources:**
 
+**Raw Data:** [Kaggle](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset): IMDb movies extensive dataset
+ - https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset
+
+**Scraped Data**: [IMDB](https://www.imdb.com/) using BeautifulSoup
+- https://www.imdb.com/
+
+
+
 
 
 ## Summary:
