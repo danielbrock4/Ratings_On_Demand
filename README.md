@@ -4,12 +4,12 @@ Using Machine Learning to Predict IMBd Movies Scores
 ## Resourses:
 
 ### **Software:** 
-- **Languages and Modules**:
+**Languages and Modules**:
  - Python: Pandas, Numpy, Matplotlib, Collections, BeautifulSoup, Flask, SciPy, SQLalchemy, Plotly, PlotlyExpress
  - HTML/CSS: Bootstrap 4.0
-- **DataBase:** PostgreSQL, QuickDBD, AWS
-- **Technology:** JupyteLab, VS Code, Heroku, Google Slides, Slack, Zoom, Trello
-- **Algorithms:** 
+**DataBase:** PostgreSQL, QuickDBD, AWS
+**Technology:** JupyteLab, VS Code, Heroku, Google Slides, Slack, Zoom, Trello
+**Algorithms:** 
  - Sklearn: Linear Regression, Ridge Regression
  - XGBoost
 
