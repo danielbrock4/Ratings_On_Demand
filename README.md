@@ -1,11 +1,21 @@
 # **Final Project:** Ratings On Demand
-Using Machine Learning to Predict IMBd Moive Scores
+Using Machine Learning to Predict IMBd Movies Scores
 
 ## Resourses:
 
-**Software:** Python, AWS, Pandas, PostgreSQL, Javascipt, CSS, HTML, D3, 
+### **Software:** 
+- **Languages and Modules**:
+ - Python: Pandas, Numpy, Matplotlib, Collections, BeautifulSoup, Flask, SciPy, SQLalchemy, Plotly, PlotlyExpress
+ - HTML/CSS: Bootstrap 4.0
+- **DataBase:** PostgreSQL, QuickDBD, AWS
+- **Technology:** JupyteLab, VS Code, Heroku, Google Slides, Slack, Zoom, Trello
+- **Algorithms:** 
+ - Sklearn: Linear Regression, Ridge Regression
+ - XGBoost
 
-**Data Sources:**
+### **Data Sources:**
+
+
 
 ## Summary:
 
