@@ -32,13 +32,14 @@ Using Machine Learning to Predict IMBd Movies Scores
 - [IMDB](https://www.imdb.com/) using BeautifulSoup
 
 
-
-
-
 # Summary:
 
 ## Description
 This repository contains a working model to predict IMDb ratings for a movie using features available prior to the movie's release. The model uses linear regression and features obtained through Kaggle.
+
+## Why This Topic and Why Audience Ratings Matter
+
+Audience Ratings are more than talking points; they influence the viewership of a project. National dialogue regarding movie ratings is often a massive debate topic amongst friends and social media, which may help or hurt a movie's performance at the box office. Some moviegoers go as far as solely relying on movie ratings to determine if they want to invest their time and money before they watch a movie, so investors need to try and predict movie ratings before investing in future projects. 
 
 ## Overview:
 Online ratings are an indispensable part of how we watch movies. They condense an entire feature-length production into a single metric, giving us a measure by which to decide, within seconds, whether it's worthy of our time or not.
@@ -58,4 +59,6 @@ Ratings on Demand is a project aimed at predicting IMDb movie ratings using feat
 * Which Machine Learning algorithm would provide the most accurate prediction?
   
   * Is Linear Regression the right approach? If not, what other paths should we consider?
+
+
 
