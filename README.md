@@ -7,11 +7,14 @@ Using Machine Learning to Predict IMBd Movies Scores
 **Languages and Modules**:
  - Python: 
    - Pandas, Numpy, Matplotlib, Collections, BeautifulSoup, Flask, SciPy, SQLalchemy, Plotly, PlotlyExpress
- - HTML/CSS: Bootstrap 4.0
+ - HTML/CSS: 
+   - Bootstrap 4.0
 
-**DataBase:** PostgreSQL, QuickDBD, AWS
+**DataBase:** 
+- PostgreSQL, QuickDBD, AWS
 
-**Technology:** JupyteLab, VS Code, Heroku, Google Slides, Slack, Zoom, Trello
+**Technology:** 
+- JupyteLab, VS Code, Heroku, Google Slides, Slack, Zoom, Trello
 
 **Algorithms:** 
  - Sklearn: Linear Regression, Ridge Regression
@@ -19,11 +22,11 @@ Using Machine Learning to Predict IMBd Movies Scores
 
 ### **Data Sources:**
 
-**Raw Data:** [Kaggle](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset): IMDb movies extensive dataset
- - https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset
+**Raw Data:** 
+- [Kaggle](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset): IMDb movies extensive dataset
 
-**Scraped Data**: [IMDB](https://www.imdb.com/) using BeautifulSoup
-- https://www.imdb.com/
+**Scraped Data**: 
+- [IMDB](https://www.imdb.com/) using BeautifulSoup
 
 
 
