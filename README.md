@@ -37,7 +37,7 @@ Using Machine Learning to Predict IMBd Movies Scores
 ## Description
 This repository contains a working model to predict IMDb ratings for a movie using features available prior to the movie's release. The model uses linear regression and features obtained through Kaggle.
 
-## Why This Topic and Why Audience Ratings Matter
+## Why Predicting Audience Ratings Would Matter to Investors
 
 Audience Ratings are more than talking points; they influence the viewership of a project. National dialogue regarding movie ratings is often a massive debate topic amongst friends and social media, which may help or hurt a movie's performance at the box office. Some moviegoers go as far as solely relying on movie ratings to determine if they want to invest their time and money before they watch a movie, so investors need to try and predict movie ratings before investing in future projects. 
 
