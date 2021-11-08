@@ -1,7 +1,10 @@
 # **Final Project:** Ratings On Demand
 Using Machine Learning to Predict IMBd Movies Scores
 
-## Resourses:
+## ** Links: **
+- [Webpage/Dashboard](https://ratingsondemand.herokuapp.com/)
+- [Trello: Timeline/Task Management](https://trello.com/b/jSii2C2y/movies-on-demand)
+- [GoogleSlides: Presentation](https://docs.google.com/presentation/d/1RqcdU3vLPqZ9CNDki9j3r28mJyeZuCQkzV43hPen5X8/edit#slide=id.gfd8f8070e1_0_106)
 
 ## **Software:** 
 **Languages and Modules**:
@@ -54,5 +57,3 @@ Ratings on Demand is a project aimed at predicting IMDb movie ratings using feat
 
 * Which Machine Learning algorithm would provide the most accurate prediction?
 
-
-Website: https://ratingsondemand.herokuapp.com/
