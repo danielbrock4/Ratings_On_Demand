@@ -3,7 +3,7 @@ Using Machine Learning to Predict IMBd Movies Scores
 
 ## Resourses:
 
-### **Software:** 
+## **Software:** 
 **Languages and Modules**:
  - Python: 
    - Pandas, Numpy, Matplotlib, Collections, BeautifulSoup, Flask, SciPy, SQLalchemy, Plotly, PlotlyExpress
@@ -20,7 +20,7 @@ Using Machine Learning to Predict IMBd Movies Scores
  - Sklearn: Linear Regression, Ridge Regression
  - XGBoost
 
-### **Data Sources:**
+## **Data Sources:**
 
 **Raw Data:** 
 - [Kaggle](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset): IMDb movies extensive dataset
@@ -32,7 +32,7 @@ Using Machine Learning to Predict IMBd Movies Scores
 
 
 
-## Summary:
+# Summary:
 
 ## Description
 This repository contains a working model to predict IMDb ratings for a movie using features available prior to the movie's release. The model uses linear regression and features obtained through Kaggle.
