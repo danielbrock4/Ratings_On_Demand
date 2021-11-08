@@ -56,4 +56,6 @@ Ratings on Demand is a project aimed at predicting IMDb movie ratings using feat
   * Are there any potential patterns that can be used to determine a movie's rating? For example, do movies with summer time release dates involving Oscar award winners produce play any part in a movie's IMDb rating. 
 
 * Which Machine Learning algorithm would provide the most accurate prediction?
+  
+  * Is Linear Regression the right approach? If not, what other paths should we consider?
 
