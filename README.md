@@ -2,9 +2,9 @@
 Using Machine Learning to Predict IMBd Movies Scores
 
 ## **Final Product Links:**
-- Dashboard: [Heroku Webpage](https://ratingsondemand.herokuapp.com/)
-- Timeline/Task Management: [Trello](https://trello.com/b/jSii2C2y/movies-on-demand)
-- Presentation Deck: [Google Slides](https://docs.google.com/presentation/d/1RqcdU3vLPqZ9CNDki9j3r28mJyeZuCQkzV43hPen5X8/edit#slide=id.gfd8f8070e1_0_106)
+- [Dashboard](https://ratingsondemand.herokuapp.com/): Heroku Webpage
+- [Timeline/Task Management](https://trello.com/b/jSii2C2y/movies-on-demand): Trello
+- [Presentation Deck](https://docs.google.com/presentation/d/1RqcdU3vLPqZ9CNDki9j3r28mJyeZuCQkzV43hPen5X8/edit#slide=id.gfd8f8070e1_0_106): Google Slides
 
 ## **Software:** 
 **Languages and Modules**:
