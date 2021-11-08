@@ -1,0 +1,33 @@
+<h2>Enter actor name:</h2>
+<form method="post" action='/customActor'>
+    <table>
+        <tr>
+            <td>
+                <input type="text" name="customActor"><br>
+            </td>
+            <td>
+                <input type="submit" value= "Submit" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+<h2>or pick actor name initial:</h2>
+
+<form method="post" action="/actorlist">
+    <table>
+        <tr>
+        {% for row in row_data %}
+            {% for col, row_ in zip(column_names, row) %}
+            {% if col == link_column %}
+            <th>
+                <input type="submit" value= {{ row_ }} name="actorIndex" />
+            </th>
+            {% else %}
+            <th>{{row_}}</th>
+            {% endif %}
+            {% endfor %}
+        {% endfor %}
+        </tr>
+    </table>
+</form>
