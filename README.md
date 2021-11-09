@@ -60,11 +60,7 @@ Ratings on Demand is a project aimed at predicting IMDb movie ratings using feat
   
   * Is Linear Regression the right approach? If not, what other paths should we consider?
 
-## Machine Learning
-
-
-
-### Feature Engineering
+## Machine Learning Analysis & Results
 
 ### Feature Correlation
  - Per our observations, there were no correlations stronger than 0.50
@@ -100,8 +96,21 @@ Using R-Squared and Mean Absolute Error (MAE), Ridge regression had a slight edg
 - R Squared: .3222
 - MAE: .5961
 - Actual vs Prediction Accuracy: 89.5%
+![image](https://github.com/danielbrock4/Ratings_On_Demand/blob/read_me_updates/Images/Prediction_vs_Target_Plot.png)
 - Most Important Features
 ![image](https://user-images.githubusercontent.com/84825189/140852622-5bc85834-e3a8-4000-94b6-e8daac6325d0.png)
+
+### Results Summary
+
+- Can we accurately predict IMDb ratings with general movie attributes?
+ - We are able to predict with an accuracy of 89.5%, given that it's very difficult to predict human behavior, we feel like our model provides a reasonable IMDB rating range based on a movie idea 
+ 
+
+### Future Considerations
+
+- Expand award nominations for actors and directions to include Emmy’s and Golden Globes
+- Rather than utilize oscar nominated directors, utilize a top 20 list of directors as movies associated with these directors appear to get a boost in ratings regardless of other features
+- Test additional regression models
 
 
 
