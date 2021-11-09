@@ -97,7 +97,7 @@ Using R-Squared and Mean Absolute Error (MAE), Ridge regression had a slight edg
 - MAE: .5961
 
 
-####Actual vs Prediction Accuracy: 89.5%
+#### Actual vs Prediction Accuracy: 89.5%
  
 ![image](https://github.com/danielbrock4/Ratings_On_Demand/blob/read_me_updates/Images/Prediction_vs_Target_Plot.png)
 
