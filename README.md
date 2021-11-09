@@ -60,5 +60,62 @@ Ratings on Demand is a project aimed at predicting IMDb movie ratings using feat
   
   * Is Linear Regression the right approach? If not, what other paths should we consider?
 
+## Machine Learning Analysis & Results
+
+### Feature Correlation
+ - Per our observations, there were no correlations stronger than 0.50
+ - The highest correlated features include
+  - Duration (Minutes)
+  - Is Drama Genre
+  - Is Biography Genre
+  - Budget (Millions)
+  - Count of Oscar Nominated Actors
+  - Is Comedy Genre
+  - Is Horror Genre
+ - Given the relatively low correlations we decided it was best to use all features in our data set for machine learning
+
+### Feature Selected for Model
+- Duration (Minutes)
+- Budget (Millions)
+- MPAA Rating - Utilized dummy variables
+- Genres - Utilized dummy variables
+- Title Length
+- Month Released (Month #)
+- Count of oscar nominated actors
+- Oscar nominated director
+
+
+### Machine Learning Model Selection
+- Given that we are tying to predict a continuous dependent variable from a number f independent variables, we chose to test 3 different regression models including
+ - Multiple Linear Regression
+ - Ridge Regression
+ - Xgboost Regression
+Using R-Squared and Mean Absolute Error (MAE), Ridge regression had a slight edge over Linear Regression![image](https://user-images.githubusercontent.com/84825189/140851113-
+
+### Machine Learning Model Results
+- R Squared: .3222
+- MAE: .5961
+
+
+#### Actual vs Prediction Accuracy: 89.5%
+ 
+![image](https://github.com/danielbrock4/Ratings_On_Demand/blob/read_me_updates/Images/Prediction_vs_Target_Plot.png)
+
+#### Most Important Features
+
+![image](https://user-images.githubusercontent.com/84825189/140852622-5bc85834-e3a8-4000-94b6-e8daac6325d0.png)
+
+### Results Summary
+
+- Can we accurately predict IMDb ratings with general movie attributes?
+ - We are able to predict with an accuracy of 89.5%, given that it's very difficult to predict human behavior, we feel like our model provides a reasonable IMDB rating range based on a movie idea 
+ 
+
+### Future Considerations
+
+- Expand award nominations for actors and directions to include Emmy’s and Golden Globes
+- Rather than utilize oscar nominated directors, utilize a top 20 list of directors as movies associated with these directors appear to get a boost in ratings regardless of other features
+- Test additional regression models
+
 
 
