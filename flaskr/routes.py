@@ -39,3 +39,8 @@ def index():
     
     return render_template("blog/index.html", title = "Home", graph1JSON=graph1JSON,  graph2JSON=graph2JSON, 
                            graph3JSON=graph3JSON, graph4JSON=graph4JSON)
+
+@app.route('/anIndex')
+def actor_index():
+    return render_template("actor_list.html", column_names=actor_index_df.columns.values, row_data=list(actor_index_df.values.tolist()),
+                           link_column="actorindex", zip=zip)
