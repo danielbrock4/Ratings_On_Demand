@@ -70,13 +70,13 @@ Using R-Squared and Mean Absolute Error (MAE), Ridge regression had a slight edg
 
 ![image](https://user-images.githubusercontent.com/84825189/140852622-5bc85834-e3a8-4000-94b6-e8daac6325d0.png)
 
-### Results Summary
+## Results Summary
 
 - Can we accurately predict IMDb ratings with general movie attributes?
  - We are able to predict with an accuracy of 89.5%, given that it's very difficult to predict human behavior, we feel like our model provides a reasonable IMDB rating range based on a movie idea 
  
 
-### Future Considerations
+## Future Considerations
 
 - Expand award nominations for actors and directions to include Emmy’s and Golden Globes
 - Rather than utilize oscar nominated directors, utilize a top 20 list of directors as movies associated with these directors appear to get a boost in ratings regardless of other features
