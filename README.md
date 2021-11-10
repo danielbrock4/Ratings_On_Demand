@@ -36,7 +36,7 @@ Using Machine Learning to Predict IMBd Movies Scores
 
 ## Overview
 
-Ratings on Demand is a project to predict IMDb movie ratings using features available earlier to a movie’s release like genre, movie duration, budget, and actor/director Oscar nominations. Using datasets provided by Kaggle and data we scraped from IMDb, we created a database on PostgreSQL to hold our data. Using our database and Python, we used several machine learning models such as linear regression to determine which model provided us with the most accurate predictions. 
+Ratings on Demand is a project to predict IMDb movie ratings using features available before a movie’s release like genre, duration, budget, and Oscar nominations. Using datasets provided by [Kaggle](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset) and data we scraped from IMDb, we created a database on PostgreSQL to hold our data. Using our database and Python, we used several machine learning models such as linear and ridge regression to determine which model provided the most accurate predictions. After collecting all our results, we built a [webpage](https://ratingsondemand.herokuapp.com/) with dashboard-like features to showcase our findings to investors.
 
 ## Why Predicting Audience Ratings Would Matter to Investors
 
