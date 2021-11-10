@@ -13,6 +13,10 @@ import plotly.express as px
 engine = create_engine('postgresql+psycopg2://postgres:moviesondemand@moviesondemandaws.cfwjiare7kds.us-east-2.rds.amazonaws.com:5432/postgres')
 # main_df = pd.read_sql_table('consolidated_pre_transformation', con=engine)
 
+#creating global variables
+global actor_df
+global actor_index_df
+global actor_movies
 
 @app.route("/")
 def index():
