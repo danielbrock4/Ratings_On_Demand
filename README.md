@@ -34,17 +34,16 @@ Using Machine Learning to Predict IMBd Movies Scores
 
 # Summary:
 
-## Description
-This repository contains a working model to predict IMDb ratings for a movie using features available prior to the movie's release. The model uses linear regression and features obtained through Kaggle.
+## Overview
+
+Ratings on Demand is a project to predict IMDb movie ratings using features available earlier to a movie’s release like genre, movie duration, budget, and actor/director Oscar nominations. Using datasets provided by Kaggle and data we scraped from IMDb, we created a database on PostgreSQL to hold our data. Using our database and Python, we used several machine learning models such as linear regression to determine which model provided us with the most accurate predictions. 
 
 ## Why Predicting Audience Ratings Would Matter to Investors
 
+Online ratings are an indispensable part of how we watch movies. They condense an entire feature-length production into a single metric, giving us a measure by which to decide whether it's worthy of our time or not.
+
 Audience Ratings are more than talking points; they influence the viewership of a project. National dialogue regarding movie ratings is often a massive debate topic amongst friends and social media, which may help or hurt a movie's performance at the box office. Some moviegoers go as far as solely relying on movie ratings to determine if they want to invest their time and money before they watch a movie, so investors need to try and predict movie ratings before investing in future projects. 
 
-## Overview:
-Online ratings are an indispensable part of how we watch movies. They condense an entire feature-length production into a single metric, giving us a measure by which to decide, within seconds, whether it's worthy of our time or not.
-
-Ratings on Demand is a project aimed at predicting IMDb movie ratings using features available prior to a movie’s release like genre, movie duration, budget, and actor/director Oscar success. The implemented predictor system uses linear regression for predicting the outcome rating, bringing insights about the data. In order to achieve this, we gathered our features obtained through various Kaggle datasets and web scraping IMDb’s website.
 
 ## Questions Answered by Our Data:
 
