@@ -2,7 +2,7 @@
 from flaskr import app
 # import dependencies and use Flask to render a template, redirecting to another url, and creating a URL
 #from flask import render_template, url_for, redirect, jsonify
-from flask import Flask, request,render_template
+from flask import Flask, request, render_template, session, redirect
 import pandas as pd
 from pandas import DataFrame, read_csv
 from sqlalchemy import create_engine
@@ -21,12 +21,6 @@ global actor_movies
 
 @app.route("/")
 def index():
-    global actor_df
-    global actor_index_df
-    global actor_movies 
-    #actor_movies = pd.read_csv('static/actor_movies.csv')
-    #actor_index_df= pd.read_csv('static/actor_index_df.csv')
-    #actor_df= pd.read_csv('static/actor_df.csv')
      # Graph One - Scott
     df = px.data.medals_wide()
     fig1 = px.bar(df, x="nation", y=["gold", "silver", "bronze"], title="Wide-Form Input")
@@ -48,10 +42,20 @@ def index():
     fig4 = px.line(df, x="year", y="lifeExp", color='country',  title="Life Expectancy")
     graph4JSON = json.dumps(fig4, cls=plotly.utils.PlotlyJSONEncoder)
     
-    return render_template("blog/index.html", title = "Home", graph1JSON=graph1JSON,  graph2JSON=graph2JSON, 
+    return render_template("home/index.html", title = "Home", graph1JSON=graph1JSON,  graph2JSON=graph2JSON, 
                            graph3JSON=graph3JSON, graph4JSON=graph4JSON)
+    
+@app.route("/search_bar") 
+def search_bar():
+    return render_template("search_bar/index.html", title = "Actors & Movies Search Bar")
 
 # @app.route('/anIndex')
 # def actor_index():
-#     return render_template("actor_list.html", column_names=actor_index_df.columns.values, row_data=list(actor_index_df.values.tolist()),
+#     global actor_df
+#     global actor_index_df
+#     global actor_movies 
+#     actor_movies = pd.read_csv('static/actor_movies.csv')
+#     actor_index_df= pd.read_csv('static/actor_index_df.csv')
+#     actor_df= pd.read_csv('static/actor_df.csv')
+#     return render_template("search_bar/index.html", title = "Actors & Movies Search Bar", column_names=actor_index_df.columns.values, row_data=list(actor_index_df.values.tolist()),
 #                            link_column="actorindex", zip=zip)
