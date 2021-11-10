@@ -7,7 +7,7 @@ Ratings on Demand is a project to predict IMDb movie ratings using features avai
 
 ![image](https://github.com/danielbrock4/Ratings_On_Demand/blob/read_me_updates/Images/webpage.png)
 
-## **Links:**
+## **Links**
 - [Heroku Webpage](https://ratingsondemand.herokuapp.com/): Dashboard
 - [Trello](https://trello.com/b/jSii2C2y/movies-on-demand): Timeline/Task Management
 - [Google Slides](https://docs.google.com/presentation/d/1RqcdU3vLPqZ9CNDki9j3r28mJyeZuCQkzV43hPen5X8/edit#slide=id.gfd8f8070e1_0_106): Presentation Deck
@@ -20,7 +20,7 @@ Online ratings are an indispensable part of how we watch movies. They condense a
 
 Audience Ratings are more than talking points; they influence the viewership of a project. National dialogue regarding movie ratings is often a massive debate topic amongst friends and social media, which may help or hurt a movie's performance at the box office. Some moviegoers go as far as solely relying on movie ratings to determine if they want to invest their time and money before they watch a movie, so investors need to try and predict movie ratings before investing in future projects. 
 
-## Questions Our Project Seeks to Answer:
+## Questions We Seek To Answer
 
 * Can we accurately predict IMDb ratings with general movie variables?
   * Is our dataset sufficient enough to produce accurate film ratings? If not, what other means need to be explored?
