@@ -58,7 +58,7 @@ Given the relatively low correlations we decided it was best to use all features
 
 
 ### Machine Learning Model Selection
-- Given that we are tying to predict a continuous dependent variable from a number f independent variables, we chose to test 3 different regression models including
+Given that we are tying to predict a continuous dependent variable from a number f independent variables, we chose to test 3 different regression models including
  - Multiple Linear Regression
  - Ridge Regression
  - Xgboost Regression
