@@ -1,4 +1,5 @@
-# Ratings On Demand: Using Machine Learning to Predict IMBd Movies Scores
+# Ratings On Demand
+### Using Machine Learning to Predict IMBd Movies Scores
 #### A Vanderbilt Data Analytics Final Project
 
 ## Overview
