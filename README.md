@@ -1,5 +1,5 @@
 # Ratings On Demand
-### A Vanderbilt Data Analytics Final Project
+### A Vanderbilt University Data Analytics Final Project
 
 ## Overview
 
