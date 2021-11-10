@@ -65,13 +65,13 @@ Ratings on Demand is a project aimed at predicting IMDb movie ratings using feat
 ### Feature Correlation
  - Per our observations, there were no correlations stronger than 0.50
  - The highest correlated features include
-  - Duration (Minutes)
-  - Is Drama Genre
-  - Is Biography Genre
-  - Budget (Millions)
-  - Count of Oscar Nominated Actors
-  - Is Comedy Genre
-  - Is Horror Genre
+   - Duration (Minutes)
+   - Is Drama Genre
+   - Is Biography Genre
+   - Budget (Millions)
+   - Count of Oscar Nominated Actors
+   - Is Comedy Genre
+   - Is Horror Genre
  - Given the relatively low correlations we decided it was best to use all features in our data set for machine learning
 
 ### Feature Selected for Model
