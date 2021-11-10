@@ -24,9 +24,9 @@ def index():
     global actor_df
     global actor_index_df
     global actor_movies 
-    actor_movies = pd.read_csv(r'static/actor_movies.csv')
-    actor_index_df= pd.read_csv(r'static/actor_index_df.csv')
-    actor_df= pd.read_csv(r'static/actor_df.csv')
+    #actor_movies = pd.read_csv('static/actor_movies.csv')
+    #actor_index_df= pd.read_csv('static/actor_index_df.csv')
+    #actor_df= pd.read_csv('static/actor_df.csv')
      # Graph One - Scott
     df = px.data.medals_wide()
     fig1 = px.bar(df, x="nation", y=["gold", "silver", "bronze"], title="Wide-Form Input")
@@ -51,7 +51,7 @@ def index():
     return render_template("blog/index.html", title = "Home", graph1JSON=graph1JSON,  graph2JSON=graph2JSON, 
                            graph3JSON=graph3JSON, graph4JSON=graph4JSON)
 
-@app.route('/anIndex')
-def actor_index():
-    return render_template("actor_list.html", column_names=actor_index_df.columns.values, row_data=list(actor_index_df.values.tolist()),
-                           link_column="actorindex", zip=zip)
+# @app.route('/anIndex')
+# def actor_index():
+#     return render_template("actor_list.html", column_names=actor_index_df.columns.values, row_data=list(actor_index_df.values.tolist()),
+#                            link_column="actorindex", zip=zip)
