@@ -13,9 +13,19 @@ import plotly.express as px
 engine = create_engine('postgresql+psycopg2://postgres:moviesondemand@moviesondemandaws.cfwjiare7kds.us-east-2.rds.amazonaws.com:5432/postgres')
 # main_df = pd.read_sql_table('consolidated_pre_transformation', con=engine)
 
+#creating global variables
+global actor_df
+global actor_index_df
+global actor_movies
 
 @app.route("/")
 def index():
+    global actor_df
+    global actor_index_df
+    global actor_movies 
+    actor_movies = pd.read_csv(r'static/data/actor_movies.csv')
+    actor_index_df= pd.read_csv(r'static/data/actor_index_df.csv')
+    actor_df= pd.read_csv(r'static/data/actor_df.csv')
      # Graph One - Scott
     df = px.data.medals_wide()
     fig1 = px.bar(df, x="nation", y=["gold", "silver", "bronze"], title="Wide-Form Input")
@@ -39,3 +49,8 @@ def index():
     
     return render_template("blog/index.html", title = "Home", graph1JSON=graph1JSON,  graph2JSON=graph2JSON, 
                            graph3JSON=graph3JSON, graph4JSON=graph4JSON)
+
+@app.route('/anIndex')
+def actor_index():
+    return render_template("actor_list.html", column_names=actor_index_df.columns.values, row_data=list(actor_index_df.values.tolist()),
+                           link_column="actorindex", zip=zip)
