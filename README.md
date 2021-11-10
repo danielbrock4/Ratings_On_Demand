@@ -62,7 +62,7 @@ Given that we are tying to predict a continuous dependent variable from a number
  - Multiple Linear Regression
  - Ridge Regression
  - Xgboost Regression
- - 
+
 Using R-Squared and Mean Absolute Error (MAE), Ridge regression had a slight edge over Linear Regression![image](https://user-images.githubusercontent.com/84825189/140851113-
 
 ### Machine Learning Model Results
