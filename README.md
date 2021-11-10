@@ -5,16 +5,16 @@
 
 Ratings on Demand is a project to predict IMDb movie ratings using features available before a movie’s release like genre, duration, budget, and Oscar nominations. Using datasets provided by [Kaggle](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset) and data we scraped from IMDb, we created a database on PostgreSQL to hold our data. Using our database and Python, we used several machine learning models such as linear and ridge regression to determine which model provided the most accurate predictions. After collecting all our results, we built a [webpage](https://ratingsondemand.herokuapp.com/) with dashboard-like features to showcase our findings to investors.
 
+## **Links:**
+- [Heroku Webpage](https://ratingsondemand.herokuapp.com/): Dashboard
+- [Trello](https://trello.com/b/jSii2C2y/movies-on-demand): Timeline/Task Management
+- [Google Slides](https://docs.google.com/presentation/d/1RqcdU3vLPqZ9CNDki9j3r28mJyeZuCQkzV43hPen5X8/edit#slide=id.gfd8f8070e1_0_106): Presentation Deck
+
 ## Why Predicting Audience Ratings Would Matter to Investors
 
 Online ratings are an indispensable part of how we watch movies. They condense an entire feature-length production into a single metric, giving us a measure by which to decide whether it's worthy of our time or not.
 
 Audience Ratings are more than talking points; they influence the viewership of a project. National dialogue regarding movie ratings is often a massive debate topic amongst friends and social media, which may help or hurt a movie's performance at the box office. Some moviegoers go as far as solely relying on movie ratings to determine if they want to invest their time and money before they watch a movie, so investors need to try and predict movie ratings before investing in future projects. 
-
-## **Links:**
-- [Heroku Webpage](https://ratingsondemand.herokuapp.com/): Dashboard
-- [Trello](https://trello.com/b/jSii2C2y/movies-on-demand): Timeline/Task Management
-- [Google Slides](https://docs.google.com/presentation/d/1RqcdU3vLPqZ9CNDki9j3r28mJyeZuCQkzV43hPen5X8/edit#slide=id.gfd8f8070e1_0_106): Presentation Deck
 
 ## Questions Our Project Seeks to Answer:
 
