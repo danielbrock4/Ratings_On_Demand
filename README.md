@@ -5,6 +5,8 @@
 
 Ratings on Demand is a project to predict IMDb movie ratings using features available before a movie’s release like genre, duration, budget, and Oscar nominations. Using datasets provided by [Kaggle](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset) and data we scraped from IMDb, we created a database on PostgreSQL to hold our data. Using our database and Python, we used several machine learning models such as linear and ridge regression to determine which model provided the most accurate predictions. After collecting all our results, we built a [webpage](https://ratingsondemand.herokuapp.com/) with dashboard-like features to showcase our findings to investors.
 
+![image](https://github.com/danielbrock4/Ratings_On_Demand/blob/read_me_updates/Images/webpage.png)
+
 ## **Links:**
 - [Heroku Webpage](https://ratingsondemand.herokuapp.com/): Dashboard
 - [Trello](https://trello.com/b/jSii2C2y/movies-on-demand): Timeline/Task Management
@@ -13,6 +15,8 @@ Ratings on Demand is a project to predict IMDb movie ratings using features avai
 ## Why Predicting Audience Ratings Would Matter to Investors
 
 Online ratings are an indispensable part of how we watch movies. They condense an entire feature-length production into a single metric, giving us a measure by which to decide whether it's worthy of our time or not.
+
+![image](https://github.com/danielbrock4/Ratings_On_Demand/blob/read_me_updates/Images/current_events.png)
 
 Audience Ratings are more than talking points; they influence the viewership of a project. National dialogue regarding movie ratings is often a massive debate topic amongst friends and social media, which may help or hurt a movie's performance at the box office. Some moviegoers go as far as solely relying on movie ratings to determine if they want to invest their time and money before they watch a movie, so investors need to try and predict movie ratings before investing in future projects. 
 
@@ -28,16 +32,19 @@ Audience Ratings are more than talking points; they influence the viewership of 
 ## Machine Learning Analysis & Results
 
 ### Feature Correlation
- - Per our observations, there were no correlations stronger than 0.50
- - The highest correlated features include
-   - Duration (Minutes)
-   - Is Drama Genre
-   - Is Biography Genre
-   - Budget (Millions)
-   - Count of Oscar Nominated Actors
-   - Is Comedy Genre
-   - Is Horror Genre
- - Given the relatively low correlations we decided it was best to use all features in our data set for machine learning
+Per our observations, there were no correlations stronger than 0.50
+ 
+The highest correlated features include:
+- Duration (Minutes)
+- Budget (Millions)
+- Count of Oscar Nominated Actors
+- Genre
+  - Drama
+  - Comedy
+  - Horror
+  - Biography
+
+Given the relatively low correlations we decided it was best to use all features in our data set for machine learning
 
 ### Feature Selected for Model
 - Duration (Minutes)
