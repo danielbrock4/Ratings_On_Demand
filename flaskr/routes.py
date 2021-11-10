@@ -24,9 +24,9 @@ def index():
     global actor_df
     global actor_index_df
     global actor_movies 
-    actor_movies = pd.read_csv(r'data/actor_movies.csv')
-    actor_index_df= pd.read_csv(r'data/actor_index_df.csv')
-    actor_df= pd.read_csv(r'data/actor_df.csv')
+    actor_movies = pd.read_csv(r'static/actor_movies.csv')
+    actor_index_df= pd.read_csv(r'static/actor_index_df.csv')
+    actor_df= pd.read_csv(r'static/actor_df.csv')
      # Graph One - Scott
     df = px.data.medals_wide()
     fig1 = px.bar(df, x="nation", y=["gold", "silver", "bronze"], title="Wide-Form Input")
