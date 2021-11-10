@@ -1,7 +1,8 @@
 # import dependencies
 from flaskr import app
 # import dependencies and use Flask to render a template, redirecting to another url, and creating a URL
-from flask import render_template, url_for, redirect, jsonify
+#from flask import render_template, url_for, redirect, jsonify
+from flask import Flask, request,render_template
 import pandas as pd
 from pandas import DataFrame, read_csv
 from sqlalchemy import create_engine
@@ -23,9 +24,9 @@ def index():
     global actor_df
     global actor_index_df
     global actor_movies 
-    actor_movies = pd.read_csv(r'static/data/actor_movies.csv')
-    actor_index_df= pd.read_csv(r'static/data/actor_index_df.csv')
-    actor_df= pd.read_csv(r'static/data/actor_df.csv')
+    actor_movies = pd.read_csv(r'/data/actor_movies.csv')
+    actor_index_df= pd.read_csv(r'/data/actor_index_df.csv')
+    actor_df= pd.read_csv(r'/data/actor_df.csv')
      # Graph One - Scott
     df = px.data.medals_wide()
     fig1 = px.bar(df, x="nation", y=["gold", "silver", "bronze"], title="Wide-Form Input")
