@@ -1,4 +1,5 @@
 # Ratings On Demand
+## Using Machine Learning to Predict IMDb Ratings
 ### A Vanderbilt University Data Analytics Final Project
 
 ![image](https://github.com/danielbrock4/Ratings_On_Demand/blob/1707f3df539e62b0f83f132f9292281ea2b8f6c0/Images/webpage.png)
