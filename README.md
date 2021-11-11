@@ -18,16 +18,18 @@ Online ratings are an indispensable part of how we watch movies. They condense a
 
 Audience Ratings are more than talking points; they influence the viewership of a project. National dialogue regarding movie ratings is often a massive debate topic amongst friends and social media, which may help or hurt a movie's performance at the box office. Some moviegoers go as far as solely relying on movie ratings to determine if they want to invest their time and money before they watch a movie, so investors need to try and predict movie ratings before investing in future projects. 
 
+Though our project explicitly focused on IMDB audience ratings, the "Eternals" is a recent current event that made national headlines. Moviegoers got caught up in the fierce debate over what carried more weight critics or audience scores on Rotten Tomatoes.  
+
 ![image](Images/current_events.png)
 
 ## Questions We Seek To Answer
 
-* Can we accurately predict IMDb ratings with general movie variables?
-  * Is our dataset sufficient enough to produce accurate film ratings? If not, what other means need to be explored?
+* Can we accurately predict IMDb ratings with standard movie variables (budget, oscar nominations, directors, genre, etc.)?
+  * Is our dataset sufficient enough to produce accurate film ratings? If not, what other means should be explored?
 * What correlations, if any, can be drawn between our chosen features and an accurate IMDb rating?
-  * Are there any potential patterns that can be used to determine a movie's rating? For example, do movies with summer time release dates involving Oscar award winners produce play any part in a movie's IMDb rating. 
-* Which Machine Learning algoriths would provide the most accurate prediction?
-  * Is Linear Regression the right approach? If not, what other paths should we consider?
+  * Are there any potential patterns that can be used to determine a movie's rating? For example, do movies with summertime release dates involving Oscar award winners play any part in determining a movie's IMDb rating. 
+* Which Machine Learning algorithms would provide the most accurate prediction?
+  * Is Linear Regression the right approach? If not, what other paths should we consider?  
 
 ## Process
 
@@ -48,13 +50,13 @@ Every team member contributed to each phase of the project equally, but we assig
 
 #### Step 4 - Create Webpage/Dashboard
 
-Initially, our team decided that we wanted to use Tableau to display our results. Still, after careful consideration, we decided we would have more flexibility and design control by building a webpage/dashboard. Sticking with Python being our primary coding language, creating a Flask app to run our webpage/dashboard made the most sense. Heroku provided us a free way to host a web page for our audience to access to deploy our website. 
+Initially, our team decided that we wanted to use Tableau to display our results. Still, after careful consideration, we decided we would have more flexibility and design control by building a webpage/dashboard. Sticking with Python being our primary coding language, creating a Flask app to run our webpage/dashboard made the most sense. Heroku provided us a free way to host a webpage for our audience to access our webpage. 
 
-To operate efficiently, while the database and machine learning code were being created and tested, one team member simultaneously made a simple Flask App to test deploying on Heroku. The biggest challenge we faced here was folder structure because building a webpage requires an exact folder structure to operate correctly. 
+To operate efficiently, while the database and machine learning code were being created and tested, one team member simultaneously made a simple Flask App to test deploying on Heroku. The biggest challenge we faced here was folder structure. Building a web page requires an exact folder structure to operate correctly. 
 
- Once the Flask App deployed successfully, we used HTML to build templates for the dashboard while we waited for machine learning code to create our visuals. After the webpage was studded and templates were set, we used CSS styling to complete the look of our page. 
+While we waited for the machine learning code to create our visuals, the webpage was studded, and HTML templates were set up to host our results. Finally, CSS and Bootstrap were used to develop the styling and look to our webpage. 
 
-Finally, after the machine learning code was completed, we added our data and visuals to our web page. Through several trial and error processes, we finally got Plotly Express to display our visuals. 
+Once the machine learning code was completed, we added our data and visuals to our web page. Through several trial and error attempts, we finally got Plotly Express to display our visuals.
 
 ## Machine Learning Analysis & Results
 
@@ -63,23 +65,24 @@ Finally, after the machine learning code was completed, we added our data and vi
 #### Target Variable
 
 - IMDB Rating
-  - IMDB ratings are entered by registered IMDb users who can cast a vote from 1-10 on ever released title in a database.  Individual votes are then aggregated as a signle IMDB rating, visible on the title's main page.
+  - IMDB ratings are entered by registered IMDb users who can vote from 1-10 on every released title in the IMDB database.  Individual votes are then aggregated as a single IMDB rating, visible on the title's main page.
 
-#### Features
+#### Features & Variables Chosen For Our Machine Learning Models
 
-- Encoded Features
-  - The following features were encoded with dummy variables in order to convert to numerical values
-    - MPAA Rating
-      - Parental guidance rating (e.g G, PG, PG-13, R, NC-17)
-    - Genres
-      - e.g. Drama, Action, Mystery
-      - Most movies are classified with more than 1 genre, if the movie was classified with a genre, the dummy variable would show a 1, if not, 0
-  - The following features were manually ecoded during the data cleansing portion of the project
-    - Count of oscar nominated actors
-      - count of oscars that were previously nominated atleast once
-    - Oscar nominated director
-      - 1 if director was previously nominated for oscar or 0 if not
-- Sourced straight from original data source
+- **Encoded/Altered Features:**
+  - The following features were encoded with dummy variables to convert to numerical values:
+    - MPAA Rating:
+      - Parental guidance rating (e.g., G, PG, PG-13, R, NC-17)
+      - MPAA ratings were not provided by the Kaggle datasets, so the data was scraped using Python and Beautiful Soup.
+    - Genres:
+      - e.g., Drama, Action, Mystery
+      - Most movies are classified with more than one genre. If the film were classified with a genre, the dummy variable would show a 1; if not, 0.
+  - The following features were manually encoded during the data cleansing portion of the project:
+    - Count of oscar-nominated actors:
+      - count of Oscars that were previously nominated at least once.
+    - Oscar-nominated director:
+      - 1 if the director was previously nominated for oscar or 0 if not.
+- Orignal/Unaltered Features From Original Dataset:
   - Duration (Minutes)
   - Budget (millions)
   - Title Length
