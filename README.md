@@ -182,7 +182,7 @@ The following features have been ranked by their associated coefficients to show
 
 ## Results Summary
 
-- Can we accurately predict IMDb ratings with general movie attributes?
+Can we accurately predict IMDb ratings with general movie attributes?
   - Based on the MAE, on average, we would be able to predict an IMDB rating within 60 bps +/- of what the actual rating currently is or would be
   - Comparing the RMSE and MAE, the RMSE is approximately 19 bps higher than the MAE, which indicates there are a few large and infrequent errors
 
