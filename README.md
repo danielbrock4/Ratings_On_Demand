@@ -58,10 +58,7 @@ Finally, after the machine learning code was completed, we added our data and vi
 
 ## Machine Learning Analysis & Results
 
-  
-
 ### Target & Features
-
 
 #### Target Variable
 
@@ -91,17 +88,16 @@ Finally, after the machine learning code was completed, we added our data and vi
 ### Feature Correlation
 
 
-Per our observations, there were no correlations stronger than 0.50
+Per our observations, there were no correlations stronger than 0.50.  In general correlations between .2 and .5 are considered to have low correlation.  Correlations below .2 are considered to have little to no correlation.  Correlation greater than .5 have a strong correlation. 
  
 The highest correlated features included:
 - Duration (Minutes)
 - Budget (Millions)
 - Count of Oscar Nominated Actors
-- Genre
-  - Drama
-  - Comedy
-  - Horror
-  - Biography
+- Drama genre
+- Comedy genre
+ 
+The visualization below shows a correlation matrix filtered with correlations greater than .2 or less than -.2
 
 ![image](Images/Corr_Matrix.png)
 
@@ -116,6 +112,10 @@ Given that we are tying to predict a continuous dependent variable from a number
 As you can see in the results below, using R-Squared and Mean Absolute Error (MAE), Ridge regression had a slight edge over Linear Regression
 
 ![image](Images/ML_Performance_Comp.png)
+
+Ridge regression is traditionally used to model data sets that suffer from multicollinarity which we recognized in the feature correlation analysis.  Other important ridge regression features and assumptions include
+  - Utilization of L2 regularization to help prevent multicollinarity
+  - The assumptions of ridge regression are consistent with linear regression except for the distribution of errors to be normal need nt be assumed
 
 
 ### Steps take with Ridge Regression Model
@@ -140,10 +140,14 @@ As you can see in the results below, using R-Squared and Mean Absolute Error (MA
 
 ### Machine Learning Model Results
 - R Squared: 0.322
-- MAE: 0.596
+- Mean Absolute Error: 0.596
+  - Measures the difference between the measured value and "true" value
 - MSE: 0.613
+  - Measures the distance between regression line and set of points, finds the average of a set of errors
 - RMSE: 0.783
-- Accuracy: 89.46
+  - A measure of how spread out residuals are or in other words, how concentraded the data is around the line of best fit
+- Funny Accuracy Measure: 89.46
+  - Calc: 100 - (mean(abs((y_test - y_pred_rr) / y_test))*100))
 
 
 #### Actual vs Prediction Accuracy: 89.5%
