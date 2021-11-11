@@ -48,6 +48,13 @@ Every team member contributed to each phase of the project equally, but we assig
 
 #### Step 4 - Create Webpage/Dashboard
 
+Initially, our team decided that we wanted to use Tableau to display our results. Still, after careful consideration, we decided we would have more flexibility and design control by building a webpage/dashboard. Sticking with Python being our primary coding language, creating a Flask app to run our webpage/dashboard made the most sense. Heroku provided us a free way to host a web page for our audience to access to deploy our website. 
+
+To operate efficiently, while the database and machine learning code were being created and tested, one team member simultaneously made a simple Flask App to test deploying on Heroku. The biggest challenge we faced here was folder structure because building a webpage requires an exact folder structure to operate correctly. 
+
+ Once the Flask App deployed successfully, we used HTML to build templates for the dashboard while we waited for machine learning code to create our visuals. After the webpage was studded and templates were set, we used CSS styling to complete the look of our page. 
+
+Finally, after the machine learning code was completed, we added our data and visuals to our web page. Through several trial and error processes, we finally got Plotly Express to display our visuals. 
 
 ## Machine Learning Analysis & Results
 
