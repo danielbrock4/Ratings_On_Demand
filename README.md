@@ -140,34 +140,44 @@ Ridge regression is traditionally used to model data sets that suffer from multi
 
 ### Machine Learning Model Results
 - R Squared: 0.322
-- Mean Absolute Error: 0.596
+  - Determines how well the model captures the variance in data
+- Mean Absolute Error (MAE): 0.596
   - Measures the difference between the measured value and "true" value
-- MSE: 0.613
-  - Measures the distance between regression line and set of points, finds the average of a set of errors
-- RMSE: 0.783
+- Root Mean Square Error (RMSE): 0.783
   - A measure of how spread out residuals are or in other words, how concentraded the data is around the line of best fit
-- Funny Accuracy Measure: 89.46
-  - Calc: 100 - (mean(abs((y_test - y_pred_rr) / y_test))*100))
 
 
-#### Actual vs Prediction Accuracy: 89.5%
+
+#### Actual vs Prediction
  
 ![image](Images/Prediction_vs_Target_Plot.png)
 
+- Based on the above scatter plot, it appears that most ratings between 5 and 7 can be predicted relative accuracy shown through the tighter fit
+- There appears to be a slight lean towards over predicting ratings in the 3.5-4.5 range which is most likely result of the intercept
+- Taking a look at some of the larger errors using the interactive scatter plot found on our website, we identified a few trends
+  - Animated films tend to be under predicted by a wide degree, two examples includ  "Up" and "Wall-E".  This potentially indicates we did not have a good feature to capture what makes an animated film better than others, futher analysis would be needed to confirm
+  - Another outlier was the highest prediction the model produced which appears to be driven by the amount of actors with oscar nominations, they had more than any other movie ("Irishman") in our test data, 4 to be exact.  This feels more like a one off exception however further analysis and testing would need to be completed, this could potentially mean we need to look at different machine learning models
+
 #### Most Important Features
+
+The following features have been ranked by their associated coefficients to show what's most important when predicting IMDB ratings when using this particular model
 
 ![image](https://user-images.githubusercontent.com/84825189/140852622-5bc85834-e3a8-4000-94b6-e8daac6325d0.png)
 
 ## Results Summary
 
 - Can we accurately predict IMDb ratings with general movie attributes?
- - We are able to predict with an accuracy of 89.5%, given that it's very difficult to predict human behavior.  Therefore we feel that our model provides a reasonable IMDB rating range based on a movie idea 
+ - Based on the MAE, on average we would be able to predict an IMDB rating with in
+ 60 bps +/- of what actual rating is or would be
+ - Comparing the RMSE and MAE, the RMSE is approximately 19 bps higher than the MAE which indicates there are a few large and infrequent errors
+ - Overall, it's not easy predicting human behavior but we believe that an MAE of .596 indicates that we could provide decent range of where your movie idea would fall in IMDb rating.
  
 
 ## Future Considerations
 
 - Expand award nominations for actors and directions to include Emmy’s and Golden Globes
 - Rather than utilize oscar nominated directors, utilize a top 20 list of directors as movies associated with these directors appear to get a boost in ratings regardless of other features
+- Identify features to better predict animated films
 - Test additional regression models
 
 
