@@ -29,6 +29,19 @@ Audience Ratings are more than talking points; they influence the viewership of 
 * Which Machine Learning algoriths would provide the most accurate prediction?
   * Is Linear Regression the right approach? If not, what other paths should we consider?
 
+## Process
+
+#### Step 1:
+During our first week of the project, our team got together to decide on a topic. After we agreed on predicting movie scores, we established our communication would be handled via Slack and Zoom. Knowing we only had four weeks to complete the project, we created a timeline and assigned roles using Trello. Check out our Trello timeline [here](https://trello.com/b/jSii2C2y/movies-on-demand).
+
+Every team helped on all the assignments, but assigned leads for each phase of the project:
+- Team Lead & Webpage Designer: [Daniel Brock](https://github.com/danielbrock4)
+- Database Engineer: 
+- Machine Learning Experts:
+
+![image](Images/trello.png)
+
+
 ## Machine Learning Analysis & Results
 
 ### Feature Correlation
