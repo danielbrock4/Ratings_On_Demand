@@ -47,7 +47,18 @@ Every team member contributed to each phase of the project equally, but we assig
 
 #### Step 2 - Clean & Scrape Data:
 
+After reviewing some possible candidates dataset for our project we decide to go with the Kaggle IMDb movies extensive dataset as our primary source of data due to the amount of information related to movies, actors, ratings and the relationship between this datasets, a very well collected data for our project
+
+The kaggle repository was not enough for this project, we needed to collect the MPAA of each movie in our dataset for our models so we did a little of web scraping on the IMDB.com website using BeautifulSoup
+
+We use python with pandas as our main tool for cleaning and scrapping data, the use of pandas dataframes was essential for our work allowing us to select the fields to use from each dataset, we were able to rename fields for better reading, check for null values and merge datasets.
+
 #### Step 3 - Set Up Database:
+
+Using Amazon Web Services (AWS) Relational Database Services (RDS) we were able to create a new database online where the cleaned and transformed datasets were loaded, a connection string to this database was created and distributed to our team for easy access to this resource, from the raw tables another views were created for easy data requests
+
+Here is the resulting Database Schema for our project:
+![image](Images/QuickDBDMoviesOnDemand.png)
 
 #### Step 4 - Machine Learning
 
