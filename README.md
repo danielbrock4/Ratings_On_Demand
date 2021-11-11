@@ -103,7 +103,7 @@ The highest correlated features included:
   - Horror
   - Biography
 
-![image](https://github.com/danielbrock4/Ratings_On_Demand/blob/read_me_updates/Images/Corr_Matrix.png)
+![image](Images/Corr_Matrix.png)
 
 Given the relatively low correlations we decided it was best to use all features in our data set for machine learning model.  Note that we indentified multiple independent features that were highly correlated with each other, the risk of multicollinearity was recognized. 
 
