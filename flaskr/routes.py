@@ -18,9 +18,11 @@ engine = create_engine('postgresql+psycopg2://postgres:moviesondemand@moviesonde
 global actor_df
 global actor_index_df
 global actor_movies
-
+global loadedOnce
 @app.route("/")
 def index():
+    global loadedOnce
+    loadedOnce = False
      # Graph One - Scott
     df = px.data.medals_wide()
     fig1 = px.bar(df, x="nation", y=["gold", "silver", "bronze"], title="Wide-Form Input")
@@ -47,7 +49,18 @@ def index():
     
 @app.route("/search_bar") 
 def search_bar():
-    return render_template("search_bar/index.html", title = "Actors & Movies Search Bar")
+    global loadedOnce
+    if loadedOnce==False:
+        global actor_df
+        global actor_index_df
+        global actor_movies 
+        actor_movies = pd.read_csv('static/actor_movies.csv')
+        actor_index_df= pd.read_csv('static/actor_index_df.csv')
+        actor_df= pd.read_csv('static/actor_df.csv')
+        loadedOnce=True
+    return render_template("search_bar/index.html", title = "Actors & Movies Search Bar", column_names=actor_index_df.columns.values, row_data=list(actor_index_df.values.tolist()),
+                           link_column="actorindex", zip=zip)
+    #return render_template("search_bar/index.html", title = "Actors & Movies Search Bar")
 
 # @app.route('/anIndex')
 # def actor_index():
