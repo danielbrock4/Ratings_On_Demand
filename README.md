@@ -1,6 +1,6 @@
 # Ratings On Demand
 ## Using Machine Learning to Predict IMDb Ratings
-### A Vanderbilt University Data Analytics Final Project
+#### A Vanderbilt University Data Analytics Final Project
 
 ![image](https://github.com/danielbrock4/Ratings_On_Demand/blob/1707f3df539e62b0f83f132f9292281ea2b8f6c0/Images/webpage.png)
 
@@ -49,7 +49,11 @@ Every team member contributed to each phase of the project equally, but we assig
 
 #### Step 3 - Set Up Database:
 
-#### Step 4 - Create Webpage/Dashboard
+#### Step 4 - Machine Learning
+
+The machine learning process and analysis have significant detail, so it's explained in its own section on the README below.  
+
+#### Step 5 - Create Webpage/Dashboard
 
 Initially, our team decided that we wanted to use Tableau to display our results. Still, after careful consideration, we decided we would have more flexibility and design control by building a webpage/dashboard. Sticking with Python being our primary coding language, creating a Flask app to run our webpage/dashboard made the most sense. Heroku provided us a free way to host a webpage for our audience to access our webpage. 
 
@@ -110,38 +114,39 @@ Given the relatively low correlations, we decided it was best to use all feature
 
 ## Machine Learning Model Selection
 
-Given that we are tying to predict a continuous dependent variable from a number of independent variables, we chose to test 3 different regression models including
+Given that we are trying to predict a continuous dependent variable from several independent variables, we chose to test 3 different regression models, including:
   - Multiple Linear Regression
   - Ridge Regression
-  - Xgboost Regression
+  - XGBoost Regression
 
-As you can see in the results below, using R-Squared and Mean Absolute Error (MAE), Ridge regression had a slight edge over Linear Regression
+Using R-Squared and Mean Absolute Error (MAE), Ridge Regression slightly edged over Linear Regression (as seen below).
 
 ![image](Images/ML_Performance_Comp.png)
 
-Ridge regression is traditionally used to model data sets that suffer from multicollinarity which we recognized in the feature correlation analysis.  Other important ridge regression features and assumptions include
-  - Utilization of L2 regularization to help prevent multicollinarity
-  - The assumptions of ridge regression are consistent with linear regression except for the distribution of errors to be normal need nt be assumed
+Ridge regression is traditionally used to model datasets that suffer from multicollinearity, which we recognized in the feature correlation analysis.  Other important ridge regression features and assumptions include:
+  - Utilization of L2 regularization to help prevent multicollinearity
+  - The assumptions of Ridge Regression are consistent with Linear Regression except for the distribution of errors to be considered normal, which should not be assumed
 
 
-### Steps take with Ridge Regression Model
-- Assigned X & y variables
+## Steps Taken with Ridge Regression Model
+
+- **Assigned X & Y variables:**
   - x = features mentioned above
-  - y = IMdb Rating
-- Train, Test, & Split
+  - y = IMDb Rating
+-  **Train, Test, & Split:**
   - Test Size = 30% of data
   - Random State = 42
-- Rescaled Data
-  - Utilized standardscaler
-- Fit model with an alpha of 10
+- **Rescaled Data:**
+  - Utilized standard scaler
+- **Fit Model with an Alpha of 10:**
   - The optimal alpha was identified by utilizing the RidgeCV function
-- Generated predicted values from test values
-- Created scatter plot to visualize the results
-- Generated diagnostic plots to review model results including
+- **Generated predicted values from test values**
+- **Created scatter plot to visualize the results**
+- **Generated diagnostic plots to review model results, including:**
   - Regression fit
   - Residual Plot
   - Normal Q-Q plot
-- Created new dataframe with prediction results along with the original main data frame for further review and visualizations
+- **Created new data frame with prediction results along with the original main data frame for further review and visualizations**
 
 
 ### Machine Learning Model Results
