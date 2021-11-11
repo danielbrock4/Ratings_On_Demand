@@ -5,7 +5,7 @@
 
 Ratings on Demand is a project to predict IMDb movie ratings using features available before a movie’s release like genre, duration, budget, and Oscar nominations. Using datasets provided by [Kaggle](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset) and data we scraped from IMDb, we created a database on PostgreSQL to hold our data. Using our database and Python, we used several machine learning models such as linear and ridge regression to determine which model provided the most accurate predictions. After collecting all our results, we built a [webpage](https://ratingsondemand.herokuapp.com/) with dashboard-like features to showcase our findings to investors.
 
-![image](https://github.com/danielbrock4/Ratings_On_Demand/Images/webpage.png)
+![image](https://github.com/danielbrock4/Ratings_On_Demand/blob/1707f3df539e62b0f83f132f9292281ea2b8f6c0/Images/webpage.png)
 
 ## **Links**
 - [Heroku Webpage](https://ratingsondemand.herokuapp.com/): Dashboard
