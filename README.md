@@ -58,13 +58,13 @@ While we waited for the machine learning code to create our visuals, the webpage
 
 Once the machine learning code was completed, we added our data and visuals to our web page. Through several trial and error attempts, we finally got Plotly Express to display our visuals.
 
-## Machine Learning Analysis & Results
+# Machine Learning Analysis & Results
 
-### Target & Features
+## Target & Features
 
 #### Target Variable
 
-- IMDB Rating
+- IMDB Rating:
   - IMDB ratings are entered by registered IMDb users who can vote from 1-10 on every released title in the IMDB database.  Individual votes are then aggregated as a single IMDB rating, visible on the title's main page.
 
 #### Features & Variables Chosen For Our Machine Learning Models
@@ -88,10 +88,11 @@ Once the machine learning code was completed, we added our data and visuals to o
   - Title Length
   - Month Released (month #)
 
-### Feature Correlation
+## Feature Correlation
 
+We needed to identify any correlations among the features in our dataset. With this knowledge, we may decide to add or reduce features to the datasets used in our machine learning models. 
 
-Per our observations, there were no correlations stronger than 0.50.  In general correlations between .2 and .5 are considered to have low correlation.  Correlations below .2 are considered to have little to no correlation.  Correlation greater than .5 have a strong correlation. 
+Per our observations, there were no correlations more robust than 0.50.  In general, correlations between .2 and .5 are considered to have low correlation.  Correlations below .2 are considered to have little to no correlation.  Correlation more significant than .5 has a strong correlation. 
  
 The highest correlated features included:
 - Duration (Minutes)
@@ -104,9 +105,10 @@ The visualization below shows a correlation matrix filtered with correlations gr
 
 ![image](Images/Corr_Matrix.png)
 
-Given the relatively low correlations we decided it was best to use all features in our data set for machine learning model.  Note that we indentified multiple independent features that were highly correlated with each other, the risk of multicollinearity was recognized. 
+Given the relatively low correlations, we decided it was best to use all features in our data set for the machine learning models.  Note that we identified multiple independent features that were highly correlated with each other, the risk of multicollinearity was recognized.  
 
-### Machine Learning Model Selection
+## Machine Learning Model Selection
+
 Given that we are tying to predict a continuous dependent variable from a number of independent variables, we chose to test 3 different regression models including
   - Multiple Linear Regression
   - Ridge Regression
