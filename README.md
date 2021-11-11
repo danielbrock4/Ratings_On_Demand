@@ -1,10 +1,115 @@
-# **Final Project:** Ratings On Demand
-Using Machine Learning to Predict IMBd Movies Scores
+# Ratings On Demand
+### A Vanderbilt University Data Analytics Final Project
 
-## **Final Product Links:**
+![image](https://github.com/danielbrock4/Ratings_On_Demand/blob/1707f3df539e62b0f83f132f9292281ea2b8f6c0/Images/webpage.png)
+
+## Overview
+
+Ratings on Demand is a project to predict IMDb movie ratings using features available before a movie’s release like genre, duration, budget, and Oscar nominations. Using datasets provided by [Kaggle](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset) and data we scraped from IMDb, we created a database on PostgreSQL to hold our data. Using our database and Python, we used several machine learning models such as linear and ridge regression to determine which model provided the most accurate predictions. After collecting all our results, we built a [webpage](https://ratingsondemand.herokuapp.com/) with dashboard-like features to showcase our findings to investors.
+
+## **Links**
 - [Heroku Webpage](https://ratingsondemand.herokuapp.com/): Dashboard
 - [Trello](https://trello.com/b/jSii2C2y/movies-on-demand): Timeline/Task Management
 - [Google Slides](https://docs.google.com/presentation/d/1RqcdU3vLPqZ9CNDki9j3r28mJyeZuCQkzV43hPen5X8/edit#slide=id.gfd8f8070e1_0_106): Presentation Deck
+
+## Why Predicting Audience Ratings Would Matter to Investors
+
+Online ratings are an indispensable part of how we watch movies. They condense an entire feature-length production into a single metric, giving us a measure by which to decide whether it's worthy of our time or not.
+
+Audience Ratings are more than talking points; they influence the viewership of a project. National dialogue regarding movie ratings is often a massive debate topic amongst friends and social media, which may help or hurt a movie's performance at the box office. Some moviegoers go as far as solely relying on movie ratings to determine if they want to invest their time and money before they watch a movie, so investors need to try and predict movie ratings before investing in future projects. 
+
+![image](Images/current_events.png)
+
+## Questions We Seek To Answer
+
+* Can we accurately predict IMDb ratings with general movie variables?
+  * Is our dataset sufficient enough to produce accurate film ratings? If not, what other means need to be explored?
+* What correlations, if any, can be drawn between our chosen features and an accurate IMDb rating?
+  * Are there any potential patterns that can be used to determine a movie's rating? For example, do movies with summer time release dates involving Oscar award winners produce play any part in a movie's IMDb rating. 
+* Which Machine Learning algoriths would provide the most accurate prediction?
+  * Is Linear Regression the right approach? If not, what other paths should we consider?
+
+## Process
+
+#### Step 1 - Establish Timeline & Job Duties:
+During our first week of the project, our team got together to decide on a topic. After we agreed on predicting movie scores, we established our communication would be handled via Slack and Zoom. Knowing we only had four weeks to complete the project, we created a timeline and assigned roles using Trello. Check out our Trello timeline [here](https://trello.com/b/jSii2C2y/movies-on-demand).
+
+Every team member contributed to each phase of the project equally, but we assigned leads to each phase to be the expert in that area.
+- [Team Lead & Webpage Designer](https://github.com/danielbrock4): Daniel Brock
+- [Database Engineer](https://github.com/Emilio-2021): Emilio Castro
+- [Machine Learning Expert](https://github.com/sbretag): Scott Bretag
+- [Machine Learning Expert](https://github.com/rwalke18): Robert Walker  
+
+![image](Images/trello.png)
+
+#### Step 2 - Clean & Scrape Data:
+
+#### Step 3 - Set Up Database:
+
+#### Step 4 - Create Webpage/Dashboard
+
+
+## Machine Learning Analysis & Results
+
+### Feature Correlation
+Per our observations, there were no correlations stronger than 0.50
+ 
+The highest correlated features include:
+- Duration (Minutes)
+- Budget (Millions)
+- Count of Oscar Nominated Actors
+- Genre
+  - Drama
+  - Comedy
+  - Horror
+  - Biography
+
+Given the relatively low correlations we decided it was best to use all features in our data set for machine learning
+
+### Feature Selected for Model
+- Duration (Minutes)
+- Budget (Millions)
+- MPAA Rating - Utilized dummy variables
+- Genres - Utilized dummy variables
+- Title Length
+- Month Released (Month #)
+- Count of oscar nominated actors
+- Oscar nominated director
+
+
+### Machine Learning Model Selection
+Given that we are tying to predict a continuous dependent variable from a number f independent variables, we chose to test 3 different regression models including
+ - Multiple Linear Regression
+ - Ridge Regression
+ - Xgboost Regression
+
+Using R-Squared and Mean Absolute Error (MAE), Ridge regression had a slight edge over Linear Regression![image](https://user-images.githubusercontent.com/84825189/140851113-
+
+### Machine Learning Model Results
+- R Squared: .3222
+- MAE: .5961
+
+
+#### Actual vs Prediction Accuracy: 89.5%
+ 
+![image](https://github.com/danielbrock4/Ratings_On_Demand/blob/read_me_updates/Images/Prediction_vs_Target_Plot.png)
+
+#### Most Important Features
+
+![image](https://user-images.githubusercontent.com/84825189/140852622-5bc85834-e3a8-4000-94b6-e8daac6325d0.png)
+
+## Results Summary
+
+- Can we accurately predict IMDb ratings with general movie attributes?
+ - We are able to predict with an accuracy of 89.5%, given that it's very difficult to predict human behavior, we feel like our model provides a reasonable IMDB rating range based on a movie idea 
+ 
+
+## Future Considerations
+
+- Expand award nominations for actors and directions to include Emmy’s and Golden Globes
+- Rather than utilize oscar nominated directors, utilize a top 20 list of directors as movies associated with these directors appear to get a boost in ratings regardless of other features
+- Test additional regression models
+
 
 ## **Software:** 
 **Languages and Modules**:
@@ -30,92 +135,4 @@ Using Machine Learning to Predict IMBd Movies Scores
 
 **Scraped Data**: 
 - [IMDB](https://www.imdb.com/) using BeautifulSoup
-
-
-# Summary:
-
-## Description
-This repository contains a working model to predict IMDb ratings for a movie using features available prior to the movie's release. The model uses linear regression and features obtained through Kaggle.
-
-## Why Predicting Audience Ratings Would Matter to Investors
-
-Audience Ratings are more than talking points; they influence the viewership of a project. National dialogue regarding movie ratings is often a massive debate topic amongst friends and social media, which may help or hurt a movie's performance at the box office. Some moviegoers go as far as solely relying on movie ratings to determine if they want to invest their time and money before they watch a movie, so investors need to try and predict movie ratings before investing in future projects. 
-
-## Overview:
-Online ratings are an indispensable part of how we watch movies. They condense an entire feature-length production into a single metric, giving us a measure by which to decide, within seconds, whether it's worthy of our time or not.
-
-Ratings on Demand is a project aimed at predicting IMDb movie ratings using features available prior to a movie’s release like genre, movie duration, budget, and actor/director Oscar success. The implemented predictor system uses linear regression for predicting the outcome rating, bringing insights about the data. In order to achieve this, we gathered our features obtained through various Kaggle datasets and web scraping IMDb’s website.
-
-## Questions Answered by Our Data:
-
-* Can we accurately predict IMDb ratings with general movie attributes?
-
-  * Is our dataset sufficient enough to produce accurate film ratings? If not, what other means need to be explored?
-
-* What correlations, if any, can be drawn between our chosen features and an accurate IMDb rating?
-  
-  * Are there any potential patterns that can be used to determine a movie's rating? For example, do movies with summer time release dates involving Oscar award winners produce play any part in a movie's IMDb rating. 
-
-* Which Machine Learning algorithm would provide the most accurate prediction?
-  
-  * Is Linear Regression the right approach? If not, what other paths should we consider?
-
-## Machine Learning Analysis & Results
-
-### Feature Correlation
- - Per our observations, there were no correlations stronger than 0.50
- - The highest correlated features include
-  - Duration (Minutes)
-  - Is Drama Genre
-  - Is Biography Genre
-  - Budget (Millions)
-  - Count of Oscar Nominated Actors
-  - Is Comedy Genre
-  - Is Horror Genre
- - Given the relatively low correlations we decided it was best to use all features in our data set for machine learning
-
-### Feature Selected for Model
-- Duration (Minutes)
-- Budget (Millions)
-- MPAA Rating - Utilized dummy variables
-- Genres - Utilized dummy variables
-- Title Length
-- Month Released (Month #)
-- Count of oscar nominated actors
-- Oscar nominated director
-
-
-### Machine Learning Model Selection
-- Given that we are tying to predict a continuous dependent variable from a number f independent variables, we chose to test 3 different regression models including
- - Multiple Linear Regression
- - Ridge Regression
- - Xgboost Regression
-Using R-Squared and Mean Absolute Error (MAE), Ridge regression had a slight edge over Linear Regression![image](https://user-images.githubusercontent.com/84825189/140851113-
-
-### Machine Learning Model Results
-- R Squared: .3222
-- MAE: .5961
-
-
-#### Actual vs Prediction Accuracy: 89.5%
- 
-![image](https://github.com/danielbrock4/Ratings_On_Demand/blob/read_me_updates/Images/Prediction_vs_Target_Plot.png)
-
-#### Most Important Features
-
-![image](https://user-images.githubusercontent.com/84825189/140852622-5bc85834-e3a8-4000-94b6-e8daac6325d0.png)
-
-### Results Summary
-
-- Can we accurately predict IMDb ratings with general movie attributes?
- - We are able to predict with an accuracy of 89.5%, given that it's very difficult to predict human behavior, we feel like our model provides a reasonable IMDB rating range based on a movie idea 
- 
-
-### Future Considerations
-
-- Expand award nominations for actors and directions to include Emmy’s and Golden Globes
-- Rather than utilize oscar nominated directors, utilize a top 20 list of directors as movies associated with these directors appear to get a boost in ratings regardless of other features
-- Test additional regression models
-
-
 
