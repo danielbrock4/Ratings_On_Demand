@@ -59,6 +59,8 @@ Initially, our team decided that we wanted to use Tableau to display our results
 
 To operate efficiently, while the database and machine learning code were being created and tested, one team member simultaneously made a simple Flask App to test deploying on Heroku. The biggest challenge we faced here was folder structure. Building a web page requires an exact folder structure to operate correctly. 
 
+![image](Images/folders.png)
+
 While we waited for the machine learning code to create our visuals, the webpage was studded, and HTML templates were set up to host our results. Finally, CSS and Bootstrap were used to develop the styling and look to our webpage. 
 
 Once the machine learning code was completed, we added our data and visuals to our web page. Through several trial and error attempts, we finally got Plotly Express to display our visuals.
@@ -171,12 +173,6 @@ Ridge regression is traditionally used to model datasets that suffer from multic
 ## Most Important Features
 
 The following features have been ranked by their associated coefficients to show what's most important when predicting IMDB ratings when using this particular model
-
-![image](https://user-images.githubusercontent.com/84825189/140852622-5bc85834-e3a8-4000-94b6-e8daac6325d0.png)
-
-## Most Important Features
-
-The following features have been ranked by their associated coefficients to show the most important when predicting IMDB ratings when using this model.
 
 ![image](https://user-images.githubusercontent.com/84825189/140852622-5bc85834-e3a8-4000-94b6-e8daac6325d0.png)
 
