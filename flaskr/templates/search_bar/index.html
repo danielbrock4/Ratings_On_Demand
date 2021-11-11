@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
+and this is another text
 <div class="container">
     <div class="row p-2">
         <div class="col-md-12">
@@ -14,51 +14,50 @@
                         This is a simple formulary to query a database for an actor name
                         and this is another text
                         
-                    </p>        
+                    </p>  
+                    <div class="container">
+                        <h1 class="display-4">Actors and their movies!</h1>
+                    <p class="lead">This is a simple formulary to query a database for an actor name.</p>
+                    <hr class="my-4">
+                    <h3>Enter an actor name:</h3>
+                    <form method="post" action='/customActor'>
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="text" name="customActor"><br>
+                            </td>
+                            <td>
+                                <input type="submit" value= "Submit" />
+                            </td>
+                        </tr>
+                    </table>
+                    </form>
+                    </div>
+                    <hr class="my-4">
+                    <div class="container">
+                    <h3>or pick an actor name initial:</h3>
+                    <form method="post" action="/actorlist">
+                    <table>
+                        <tr>
+                        {% for row in row_data %}
+                            {% for col, row_ in zip(column_names, row) %}
+                            {% if col == link_column %}
+                            <th>
+                                <input type="submit" value= {{ row_ }} name="actorIndex" />
+                            </th>
+                            {% else %}
+                            <th>{{row_}}</th>
+                            {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                        </tr>
+                    </table>
+                    </form>
+                    </div>      
                 </div>
             </div>
         </div>         
     </div>
 </div>
-
-<!-- <div class="container">
-    <h1 class="display-4">Actors and their movies!</h1>
-<p class="lead">This is a simple formulary to query a database for an actor name.</p>
-<hr class="my-4">
-<h3>Enter an actor name:</h3>
-<form method="post" action='/customActor'>
-<table>
-    <tr>
-        <td>
-            <input type="text" name="customActor"><br>
-        </td>
-        <td>
-            <input type="submit" value= "Submit" />
-        </td>
-    </tr>
-</table>
-</form>
-</div>
-<hr class="my-4">
-<div class="container">
-<h3>or pick an actor name initial:</h3>
-<form method="post" action="/actorlist">
-<table>
-    <tr>
-    {% for row in row_data %}
-        {% for col, row_ in zip(column_names, row) %}
-        {% if col == link_column %}
-        <th>
-            <input type="submit" value= {{ row_ }} name="actorIndex" />
-        </th>
-        {% else %}
-        <th>{{row_}}</th>
-        {% endif %}
-        {% endfor %}
-    {% endfor %}
-    </tr>
-</table>
-</form>
-</div> -->
 
 {% endblock %}

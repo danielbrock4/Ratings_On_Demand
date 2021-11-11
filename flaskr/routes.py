@@ -9,6 +9,7 @@ from sqlalchemy import create_engine
 import json 
 import plotly
 import plotly.express as px
+import os
 
 # create engine to pull in data
 engine = create_engine('postgresql+psycopg2://postgres:moviesondemand@moviesondemandaws.cfwjiare7kds.us-east-2.rds.amazonaws.com:5432/postgres')
@@ -54,21 +55,49 @@ def search_bar():
         global actor_df
         global actor_index_df
         global actor_movies 
-        actor_movies = pd.read_csv('static/actor_movies.csv')
-        actor_index_df= pd.read_csv('static/actor_index_df.csv')
-        actor_df= pd.read_csv('static/actor_df.csv')
+        target = os.path.join(app.static_folder, 'actor_movies.csv')
+        #print(target)
+        actor_movies = pd.read_csv(target)
+        target = os.path.join(app.static_folder, 'actor_index_df.csv')
+        actor_index_df= pd.read_csv(target)
+        target = os.path.join(app.static_folder, 'actor_df.csv')
+        actor_df= pd.read_csv(target)
         loadedOnce=True
     return render_template("search_bar/index.html", title = "Actors & Movies Search Bar", column_names=actor_index_df.columns.values, row_data=list(actor_index_df.values.tolist()),
                            link_column="actorindex", zip=zip)
-    #return render_template("search_bar/index.html", title = "Actors & Movies Search Bar")
 
-# @app.route('/anIndex')
-# def actor_index():
-#     global actor_df
-#     global actor_index_df
-#     global actor_movies 
-#     actor_movies = pd.read_csv('static/actor_movies.csv')
-#     actor_index_df= pd.read_csv('static/actor_index_df.csv')
-#     actor_df= pd.read_csv('static/actor_df.csv')
-#     return render_template("search_bar/index.html", title = "Actors & Movies Search Bar", column_names=actor_index_df.columns.values, row_data=list(actor_index_df.values.tolist()),
-#                            link_column="actorindex", zip=zip)
+
+@app.route('/actorlist', methods =["GET","POST"])
+def actor_list():
+    if request.method == "POST":
+        initial = request.form.get('actorIndex')
+        initial = str.upper(initial)
+        data = actor_df[['actor_name']] [actor_df['actor_name'].str.startswith('%s' % initial)].head(20)
+        return render_template("search_bar/actorListNames.html", 
+            column_names=actor_index_df.columns.values, row_data=list(actor_index_df.values.tolist()),
+                            link_column="actorindex",
+            acolumn_names=data.columns.values, arow_data=list(data.values.tolist()),
+                            alink_column="actor_name", zip=zip,t=1)
+
+@app.route('/movielist', methods =["GET","POST"])
+def movie_list():
+    if request.method == "POST":
+        initial = request.form.get('actorName')
+        #initial = str.upper(initial)
+        data = actor_movies[['movie_title']] [actor_movies['actor_name'].str.contains('%s' % initial)].head(20)
+        return render_template("search_bar/actorListNames.html", 
+            column_names=actor_index_df.columns.values, row_data=list(actor_index_df.values.tolist()),
+                            link_column="actorindex",
+            acolumn_names=data.columns.values, arow_data=list(data.values.tolist()),
+                            alink_column="actor_name", zip=zip,t=2,nm=initial)
+
+@app.route('/customActor', methods =["GET","POST"])
+def custom_actor():
+    if request.method == "POST":
+        initial = request.form.get('customActor')
+        data = actor_df[['actor_name']] [actor_df['actor_name'].str.contains('%s' % initial, case=False)].head(20)
+        return render_template("search_bar/actorListNames.html", 
+            column_names=actor_index_df.columns.values, row_data=list(actor_index_df.values.tolist()),
+                            link_column="actorindex",
+            acolumn_names=data.columns.values, arow_data=list(data.values.tolist()),
+                            alink_column="actor_name", zip=zip,t=1)
