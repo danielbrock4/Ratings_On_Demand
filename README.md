@@ -18,7 +18,7 @@ Online ratings are an indispensable part of how we watch movies. They condense a
 
 Audience Ratings are more than talking points; they influence the viewership of a project. National dialogue regarding movie ratings is often a massive debate topic amongst friends and social media, which may help or hurt a movie's performance at the box office. Some moviegoers go as far as solely relying on movie ratings to determine if they want to invest their time and money before they watch a movie, so investors need to try and predict movie ratings before investing in future projects. 
 
-Though our project explicitly focused on IMDB audience ratings, the "Eternals" is a recent current event that made national headlines. Moviegoers got caught up in the fierce debate over what carried more weight critics or audience scores on Rotten Tomatoes.  
+What weighs more on deciding if a film is good or not: the critics or audience scores? Though our project primarily focused on IMDB audience ratings, the "Eternals" is a recent current event that made national headlines about audience ratings. Moviegoers got caught up in a fierce debate over what scores were more critical on determining if a movie is good or not on Rotten Tomatoes. 
 
 ![image](Images/current_events.png)
 
