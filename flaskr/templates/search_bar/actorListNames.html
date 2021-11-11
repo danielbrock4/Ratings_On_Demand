@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMDB Actors Movies</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <!--
-    <link rel="stylesheet" href="static/css/style.css">
-    -->
-</head>
+{% extends "base.html" %}
+{% block content %}
+and this is another text
 <div class="container">
-        <h1 class="display-4">Actors and their movies!</h1>
+    <div class="row p-2">
+        <div class="col-md-12">
+            <div class="card" data-aos="fade-up">
+                <div class="card-body">
+                    <h2 class="card-title">Actors and Movies Search Bar</h2>
+                    <h3 class="card-subtitle text-muted">Explore Our Dataset</h3>
+                    <br>
+<div class="container">
   <p class="lead">This is a simple formulary to query a database for an actor name.</p>
   <hr class="my-4">
   <h3 >Enter an actor name:</h3>
@@ -43,7 +36,7 @@
             {% for col, row_ in zip(column_names, row) %}
             {% if col == link_column %}
             <th>
-                <input type="submit" value= {{ row_ }} name="actorIndex" />
+                <input type="submit" value= {{ row_ }} name="actorIndex" class="btn btn-primary" />
             </th>
             {% else %}
             <th>{{row_}}</th>
@@ -77,7 +70,7 @@
                 </button>
             </td>
             {% else %}
-            <td> - {{row_}}</td>
+            <td class="card-subtitle text-muted"> - {{row_}}</td>
             {% endif %}
             {% endfor %}
         </tr>
@@ -85,5 +78,4 @@
     </table>
 </form>
 </div>
-</body>
-</html>
+{% endblock %}

@@ -9,14 +9,7 @@ and this is another text
                     <h2 class="card-title">Actors and Movies Search Bar</h2>
                     <h3 class="card-subtitle text-muted">Explore Our Dataset</h3>
                     <br>
-                    <p class="card-text">
-
-                        This is a simple formulary to query a database for an actor name
-                        and this is another text
-                        
-                    </p>  
                     <div class="container">
-                        <h1 class="display-4">Actors and their movies!</h1>
                     <p class="lead">This is a simple formulary to query a database for an actor name.</p>
                     <hr class="my-4">
                     <h3>Enter an actor name:</h3>
@@ -43,7 +36,7 @@ and this is another text
                             {% for col, row_ in zip(column_names, row) %}
                             {% if col == link_column %}
                             <th>
-                                <input type="submit" value= {{ row_ }} name="actorIndex" />
+                                <input type="submit" value= {{ row_ }} name="actorIndex" class="btn btn-primary"/>
                             </th>
                             {% else %}
                             <th>{{row_}}</th>
