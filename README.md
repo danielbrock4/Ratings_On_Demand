@@ -31,15 +31,22 @@ Audience Ratings are more than talking points; they influence the viewership of 
 
 ## Process
 
-#### Step 1:
+#### Step 1 - Establish Timeline & Job Duties:
 During our first week of the project, our team got together to decide on a topic. After we agreed on predicting movie scores, we established our communication would be handled via Slack and Zoom. Knowing we only had four weeks to complete the project, we created a timeline and assigned roles using Trello. Check out our Trello timeline [here](https://trello.com/b/jSii2C2y/movies-on-demand).
 
-Every team helped on all the assignments, but assigned leads for each phase of the project:
-- Team Lead & Webpage Designer: [Daniel Brock](https://github.com/danielbrock4)
-- Database Engineer: 
-- Machine Learning Experts:
+Every team member contributed to each phase of the project equally, but we assigned leads to each phase to be the expert in that area.
+- [Team Lead & Webpage Designer](https://github.com/danielbrock4): Daniel Brock
+- [Database Engineer](https://github.com/Emilio-2021): Emilio Castro
+- [Machine Learning Expert](https://github.com/sbretag): Scott Bretag
+- [Machine Learning Expert](https://github.com/rwalke18): Robert Walker  
 
 ![image](Images/trello.png)
+
+#### Step 2 - Clean & Scrape Data:
+
+#### Step 3 - Set Up Database:
+
+#### Step 4 - Create Webpage/Dashboard
 
 
 ## Machine Learning Analysis & Results
