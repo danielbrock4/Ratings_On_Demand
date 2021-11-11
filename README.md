@@ -58,10 +58,42 @@ Finally, after the machine learning code was completed, we added our data and vi
 
 ## Machine Learning Analysis & Results
 
+  
+
+### Target & Features
+
+
+#### Target Variable
+
+- IMDB Rating
+  - IMDB ratings are entered by registered IMDb users who can cast a vote from 1-10 on ever released title in a database.  Individual votes are then aggregated as a signle IMDB rating, visible on the title's main page.
+
+#### Features
+
+- Encoded Features
+  - The following features were encoded with dummy variables in order to convert to numerical values
+    - MPAA Rating
+      - Parental guidance rating (e.g G, PG, PG-13, R, NC-17)
+    - Genres
+      - e.g. Drama, Action, Mystery
+      - Most movies are classified with more than 1 genre, if the movie was classified with a genre, the dummy variable would show a 1, if not, 0
+  - The following features were manually ecoded during the data cleansing portion of the project
+    - Count of oscar nominated actors
+      - count of oscars that were previously nominated atleast once
+    - Oscar nominated director
+      - 1 if director was previously nominated for oscar or 0 if not
+- Sourced straight from original data source
+  - Duration (Minutes)
+  - Budget (millions)
+  - Title Length
+  - Month Released (month #)
+
 ### Feature Correlation
+
+
 Per our observations, there were no correlations stronger than 0.50
  
-The highest correlated features include:
+The highest correlated features included:
 - Duration (Minutes)
 - Budget (Millions)
 - Count of Oscar Nominated Actors
@@ -71,30 +103,45 @@ The highest correlated features include:
   - Horror
   - Biography
 
-Given the relatively low correlations we decided it was best to use all features in our data set for machine learning
+![image](https://github.com/danielbrock4/Ratings_On_Demand/blob/read_me_updates/Images/Corr_Matrix.png)
 
-### Feature Selected for Model
-- Duration (Minutes)
-- Budget (Millions)
-- MPAA Rating - Utilized dummy variables
-- Genres - Utilized dummy variables
-- Title Length
-- Month Released (Month #)
-- Count of oscar nominated actors
-- Oscar nominated director
-
+Given the relatively low correlations we decided it was best to use all features in our data set for machine learning model.  Note that we indentified multiple independent features that were highly correlated with each other, the risk of multicollinearity was recognized. 
 
 ### Machine Learning Model Selection
-Given that we are tying to predict a continuous dependent variable from a number f independent variables, we chose to test 3 different regression models including
- - Multiple Linear Regression
- - Ridge Regression
- - Xgboost Regression
+Given that we are tying to predict a continuous dependent variable from a number of independent variables, we chose to test 3 different regression models including
+  - Multiple Linear Regression
+  - Ridge Regression
+  - Xgboost Regression
 
-Using R-Squared and Mean Absolute Error (MAE), Ridge regression had a slight edge over Linear Regression![image](https://user-images.githubusercontent.com/84825189/140851113-
+As you can see in the results below, using R-Squared and Mean Absolute Error (MAE), Ridge regression had a slight edge over Linear Regression![image](https://user-images.githubusercontent.com/84825189/140851113-
+
+
+### Steps take with Ridge Regression Model
+- Assigned X & y variables
+  - x = features mentioned above
+  - y = IMdb Rating
+- Train, Test, & Split
+  - Test Size = 30% of data
+  - Random State = 42
+- Rescaled Data
+  - Utilized standardscaler
+- Fit model with an alpha of 10
+  - The optimal alpha was identified by utilizing the RidgeCV function
+- Generated predicted values from test values
+- Created scatter plot to visualize the results
+- Generated diagnostic plots to review model results including
+  - Regression fit
+  - Residual Plot
+  - Normal Q-Q plot
+- Created new dataframe with prediction results along with the original main data frame for further review and visualizations
+
 
 ### Machine Learning Model Results
-- R Squared: .3222
-- MAE: .5961
+- R Squared: 0.322
+- MAE: 0.596
+- MSE: 0.613
+- RMSE: 0.783
+- Accuracy: 89.46
 
 
 #### Actual vs Prediction Accuracy: 89.5%
@@ -108,7 +155,7 @@ Using R-Squared and Mean Absolute Error (MAE), Ridge regression had a slight edg
 ## Results Summary
 
 - Can we accurately predict IMDb ratings with general movie attributes?
- - We are able to predict with an accuracy of 89.5%, given that it's very difficult to predict human behavior, we feel like our model provides a reasonable IMDB rating range based on a movie idea 
+ - We are able to predict with an accuracy of 89.5%, given that it's very difficult to predict human behavior.  Therefore we feel that our model provides a reasonable IMDB rating range based on a movie idea 
  
 
 ## Future Considerations
