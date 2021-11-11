@@ -16,9 +16,9 @@ Ratings on Demand is a project to predict IMDb movie ratings using features avai
 
 Online ratings are an indispensable part of how we watch movies. They condense an entire feature-length production into a single metric, giving us a measure by which to decide whether it's worthy of our time or not.
 
-![image](Images/current_events.png)
-
 Audience Ratings are more than talking points; they influence the viewership of a project. National dialogue regarding movie ratings is often a massive debate topic amongst friends and social media, which may help or hurt a movie's performance at the box office. Some moviegoers go as far as solely relying on movie ratings to determine if they want to invest their time and money before they watch a movie, so investors need to try and predict movie ratings before investing in future projects. 
+
+![image](Images/current_events.png)
 
 ## Questions We Seek To Answer
 
