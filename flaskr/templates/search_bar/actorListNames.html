@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+and this is another text
+<div class="container">
+    <div class="row p-2">
+        <div class="col-md-12">
+            <div class="card" data-aos="fade-up">
+                <div class="card-body">
+                    <h2 class="card-title">Actors and Movies Search Bar</h2>
+                    <h3 class="card-subtitle text-muted">Explore Our Dataset</h3>
+                    <br>
+<div class="container">
+  <p class="lead">This is a simple formulary to query a database for an actor name.</p>
+  <hr class="my-4">
+  <h3 >Enter an actor name:</h3>
+<form method="post" action='/customActor'>
+    <table>
+        <tr>
+            <td>
+                <input type="text" name="customActor"><br>
+            </td>
+            <td>
+                <input type="submit" value= "Submit" />
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+<hr class="my-4">
+<div class="container">
+    <h3 >or pick an actor name initial:</h3>
+<form method="post" action='/actorlist'>
+    <table>
+        <tr>
+        {% for row in row_data %}
+            {% for col, row_ in zip(column_names, row) %}
+            {% if col == link_column %}
+            <th>
+                <input type="submit" value= {{ row_ }} name="actorIndex" class="btn btn-primary" />
+            </th>
+            {% else %}
+            <th>{{row_}}</th>
+            {% endif %}
+            {% endfor %}
+        {% endfor %}
+        </tr>
+    </table>
+</form>
+</div>
+<br />
+<hr class="my-4">
+<div class="container">
+{% if t == 1 %}
+    <h1>Actor list</h1>
+{% else %}
+    <h2>Actor name: "{{nm}}"</h2>
+    <h3>List of movies:</h3>
+{% endif %}
+
+<form method="post" action='/movielist' id="form2">
+    <table>
+        {% for row in arow_data %}
+        <tr>
+            {% for col, row_ in zip(acolumn_names, row) %}
+            {% if col == alink_column %}
+            <td>
+                <button type="submit" value="{{ row_ }}" name="actorName" form="form2" class="btn btn-primary">
+                    {{ row_ }}
+                </button>
+            </td>
+            {% else %}
+            <td class="card-subtitle text-muted"> - {{row_}}</td>
+            {% endif %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+</div>
+{% endblock %}

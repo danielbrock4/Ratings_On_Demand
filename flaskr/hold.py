@@ -1,7 +1,7 @@
     
-@app.route("/search_bar") 
-def search_bar():
-    return render_template("search_bar/index.html", title = "Actors & Movies Search Bar")
+# @app.route("/search_bar") 
+# def search_bar():
+#     return render_template("search_bar/index.html", title = "Actors & Movies Search Bar")
 
 # @app.route('/anIndex')
 # def actor_index():
