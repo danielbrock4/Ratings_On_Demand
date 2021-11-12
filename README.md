@@ -47,18 +47,20 @@ Every team member contributed to each phase of the project equally, but we assig
 
 #### Step 2 - Clean & Scrape Data:
 
-After reviewing some possible candidates dataset for our project we decide to go with the Kaggle IMDb movies extensive dataset as our primary source of data due to the amount of information related to movies, actors, ratings and the relationship between this datasets, a very well collected data for our project
+After reviewing some possible datasets for our project, we decided to go with the Kaggle IMDb movie dataset as our primary data source due to the amount of information related to films, actors, ratings, and the relationship between these datasets.
 
-The kaggle repository was not enough for this project, we needed to collect the MPAA of each movie in our dataset for our models so we did a little of web scraping on the IMDB.com website using BeautifulSoup
+The Kaggle datasets were also a good option because they would require less cleaning, though we still had to do a bit of ETL before they were ready to put into a database. We needed to collect the MPAA of each movie in our dataset for our models, so we did a little web scraping on the IMDB.com website using BeautifulSoup.
 
-We use python with pandas as our main tool for cleaning and scrapping data, the use of pandas dataframes was essential for our work allowing us to select the fields to use from each dataset, we were able to rename fields for better reading, check for null values and merge datasets.
+Python and Pandas were our primary tools for cleaning and scraping data. The use of Pandas data frames was essential for our work, which allowed us to select the fields to use from each dataset. We were now able to rename fields with more clear descriptions, check for null values, and merge/join datasets.
 
 #### Step 3 - Set Up Database:
 
-Using Amazon Web Services (AWS) Relational Database Services (RDS) we were able to create a new database online where the cleaned and transformed datasets were loaded, a connection string to this database was created and distributed to our team for easy access to this resource, from the raw tables another views were created for easy data requests
+With our data now cleaned, it was time to create our database. But before we could do that, we needed to sketch out our ERD using QuickDBD. This way, we could see visually how our datasets would be connected within our database.
 
 Here is the resulting Database Schema for our project:
 ![image](Images/QuickDBDMoviesOnDemand.png)
+
+Using Amazon Web Services (AWS) Relational Database Services (RDS), we were able to create a new database online where the cleaned and transformed datasets were loaded. Then a connection string to this database was made and distributed to our team for easy access to this resource. Using this new connection to our database, we could now pull cleaned data and tables into Python, where we could use it to build our machine learning models.
 
 #### Step 4 - Machine Learning
 
