@@ -102,7 +102,7 @@ Once the machine learning code was completed, we added our data and visuals to o
       - count of Oscars that were previously nominated at least once.
     - Oscar-nominated director:
       - 1 if the director was previously nominated for oscar or 0 if not.
-- Orignal/Unaltered Features From Original Dataset:
+- **Orignal/Unaltered Features From Original Dataset**:
   - Duration (Minutes)
   - Budget (millions)
   - Title Length
