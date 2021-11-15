@@ -17,8 +17,7 @@ import os
 engine = create_engine('postgresql+psycopg2://postgres:moviesondemand@moviesondemandaws.cfwjiare7kds.us-east-2.rds.amazonaws.com:5432/postgres')
 
 #Read In Ridge Recessions Results csv
-ridge_test_results = r'static/ridge_test_results.csv'
-clean_comp_results = pd.read_csv(ridge_test_results, low_memory=False)
+ridge_test_results = r'C:/Users/Daniel Brock/OneDrive/Desktop/DataAnalyticsBootcamp/Final_Project/Ratings_On_Demand/flaskr/static/ridge_test_results.csv'
 
 #creating global variables
 global actor_df
@@ -29,10 +28,7 @@ global loadedOnce
 @app.route("/")
 def index():
     
-    ridge_test_results = r'static/ridge_test_results.csv'
-    clean_comp_results = pd.read_csv(ridge_test_results, low_memory=False)
-    
-    df = clean_comp_results
+    df = pd.read_csv(ridge_test_results, low_memory=False)
     fig = px.scatter(df, 
                      x="Predicted Rating", 
                      y="Actual Rating", 
