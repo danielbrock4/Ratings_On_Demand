@@ -1,4 +1,5 @@
 # import dependencies
+from sklearn.linear_model import ridge_regression
 from flaskr import app
 # import dependencies and use Flask to render a template, redirecting to another url, and creating a URL
 #from flask import render_template, url_for, redirect, jsonify
@@ -9,11 +10,14 @@ from sqlalchemy import create_engine
 import json 
 import plotly
 import plotly.express as px
+import numpy as np
 import os
 
 # create engine to pull in data
 engine = create_engine('postgresql+psycopg2://postgres:moviesondemand@moviesondemandaws.cfwjiare7kds.us-east-2.rds.amazonaws.com:5432/postgres')
-# main_df = pd.read_sql_table('consolidated_pre_transformation', con=engine)
+
+#Read In Ridge Recessions Results csv
+ridge_test_results = r'C:/Users/Daniel Brock/OneDrive/Desktop/DataAnalyticsBootcamp/Final_Project/Ratings_On_Demand/flaskr/static/ridge_test_results.csv'
 
 #creating global variables
 global actor_df
@@ -23,31 +27,47 @@ global loadedOnce
 
 @app.route("/")
 def index():
-    global loadedOnce
-    loadedOnce = False
-     # Graph One - Scott
-    df = px.data.medals_wide()
-    fig1 = px.bar(df, x="nation", y=["gold", "silver", "bronze"], title="Wide-Form Input")
-    graph1JSON = json.dumps(fig1, cls=plotly.utils.PlotlyJSONEncoder)
-
-    # Graph Two - Robert
-    df = px.data.iris()
-    fig2 = px.scatter_3d(df, x='sepal_length', y='sepal_width', z='petal_width',
-              color='species',  title="Iris Dataset")
-    graph2JSON = json.dumps(fig2, cls=plotly.utils.PlotlyJSONEncoder)
-
-    # Graph Three - Emilio
-    df = px.data.gapminder().query("continent=='Oceania'")
-    fig3 = px.line(df, x="year", y="lifeExp", color='country',  title="Life Expectancy")
-    graph3JSON = json.dumps(fig3, cls=plotly.utils.PlotlyJSONEncoder)
     
-    # Graph Four - Daniel
-    df = px.data.gapminder().query("continent=='Oceania'")
-    fig4 = px.line(df, x="year", y="lifeExp", color='country',  title="Life Expectancy")
-    graph4JSON = json.dumps(fig4, cls=plotly.utils.PlotlyJSONEncoder)
+    df = pd.read_csv(ridge_test_results, low_memory=False)
+    fig = px.scatter(df, 
+                     x="Predicted Rating", 
+                     y="Actual Rating", 
+                     trendline="ols", 
+                     hover_data=['Accuracy','Title', 'Genre' , 'Duration (min)' , 'Budget (mm)' , 'MPAA Rating' ]
+                     )
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     
-    return render_template("home/index.html", title = "Home", graph1JSON=graph1JSON,  graph2JSON=graph2JSON, 
-                           graph3JSON=graph3JSON, graph4JSON=graph4JSON)
+    # Visual
+    
+
+    #  # Graph One - Scott
+    # df = px.data.medals_wide()
+    # fig1 = px.bar(df, x="nation", y=["gold", "silver", "bronze"], title="Wide-Form Input")
+    # graph1JSON = json.dumps(fig1, cls=plotly.utils.PlotlyJSONEncoder)
+
+    # # Graph Two - Robert
+    # df = px.data.iris()
+    # fig2 = px.scatter_3d(df, x='sepal_length', y='sepal_width', z='petal_width',
+    #           color='species',  title="Iris Dataset")d
+    # graph2JSON = json.dumps(fig2, cls=plotly.utils.PlotlyJSONEncoder)
+
+    # # Graph Three - Emilio
+    # df = px.data.gapminder().query("continent=='Oceania'")
+    # fig3 = px.line(df, x="year", y="lifeExp", color='country',  title="Life Expectancy")
+    # graph3JSON = json.dumps(fig3, cls=plotly.utils.PlotlyJSONEncoder)
+    
+    # # Graph Four - Daniel
+    # df = px.data.gapminder().query("continent=='Oceania'")
+    # fig4 = px.line(df, x="year", y="lifeExp", color='country',  title="Life Expectancy")
+    # graph4JSON = json.dumps(fig4, cls=plotly.utils.PlotlyJSONEncoder)
+    
+    return render_template("home/index.html", title = "Home", 
+                           graphJSON=graphJSON
+                        #    graph1JSON=graph1JSON,  
+                        #    graph2JSON=graph2JSON, 
+                        #    graph3JSON=graph3JSON, 
+                        #    graph4JSON=graph4JSON
+                        )
     
 @app.route("/search_bar") 
 def search_bar():
