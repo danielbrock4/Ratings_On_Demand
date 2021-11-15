@@ -1,6 +1,6 @@
 # import dependencies
 from sklearn.linear_model import ridge_regression
-from flaskr import app
+from . import app
 # import dependencies and use Flask to render a template, redirecting to another url, and creating a URL
 #from flask import render_template, url_for, redirect, jsonify
 from flask import Flask, request, render_template, session, redirect
@@ -13,17 +13,22 @@ import plotly.express as px
 import numpy as np
 import os
 
+
 # create engine to pull in data
 engine = create_engine('postgresql+psycopg2://postgres:moviesondemand@moviesondemandaws.cfwjiare7kds.us-east-2.rds.amazonaws.com:5432/postgres')
 
 #Read In Ridge Recessions Results csv
-ridge_test_results = r'C:/Users/Daniel Brock/OneDrive/Desktop/DataAnalyticsBootcamp/Final_Project/Ratings_On_Demand/flaskr/static/ridge_test_results.csv'
+# ridge_test_results = r'static/ridge_test_results.csv'
+ridge_test_results  = os.path.join(app.static_folder, "ridge_test_results.csv")
 
 #creating global variables
 global actor_df
 global actor_index_df
 global actor_movies
 global loadedOnce
+
+# df = pd.read_csv(ridge_test_results, low_memory=False)
+# print(df)
 
 @app.route("/")
 def index():
@@ -71,7 +76,7 @@ def index():
     
 @app.route("/search_bar") 
 def search_bar():
-    global loadedOnce
+    loadedOnce=False
     if loadedOnce==False:
         global actor_df
         global actor_index_df
@@ -121,3 +126,4 @@ def custom_actor():
                             link_column="actorindex",
             acolumn_names=data.columns.values, arow_data=list(data.values.tolist()),
                             alink_column="actor_name", zip=zip,t=1)
+        
