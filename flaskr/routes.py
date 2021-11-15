@@ -18,7 +18,6 @@ import os
 engine = create_engine('postgresql+psycopg2://postgres:moviesondemand@moviesondemandaws.cfwjiare7kds.us-east-2.rds.amazonaws.com:5432/postgres')
 
 #Read In Ridge Recessions Results csv
-# ridge_test_results = r'static/ridge_test_results.csv'
 ridge_test_results  = os.path.join(app.static_folder, "ridge_test_results.csv")
 
 #creating global variables

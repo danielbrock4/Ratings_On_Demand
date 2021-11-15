@@ -18,3 +18,6 @@ ridge_test_results  = os.path.join("static" , "ridge_test_results.csv")
 df = pd.read_csv(ridge_test_results, low_memory=False)
 print(df)
 # app = Flask(__name__, static_folder='static', static_url_path='')
+
+plot==0.6.5
+plotly==5.3.1
