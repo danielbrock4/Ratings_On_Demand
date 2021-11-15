@@ -19,3 +19,4 @@ psycopg2==2.9.1
 numpy==1.20.1
 plot==0.6.5
 plotly-express==0.4.1
+plotly==5.3.1
