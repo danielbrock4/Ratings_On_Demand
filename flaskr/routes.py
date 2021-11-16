@@ -24,8 +24,7 @@ ridge_test_results  = os.path.join(app.static_folder, "ridge_test_results.csv")
 global actor_df
 global actor_index_df
 global actor_movies
-# global loadedOnce
-# loadedOnce=False
+global loadedOnce
 
 # df = pd.read_csv(ridge_test_results, low_memory=False)
 # print(df)
@@ -79,7 +78,8 @@ def index():
     
 @app.route("/search_bar") 
 def search_bar():
-    loadedOnce=False
+    # loadedOnce=False
+    global loadedOnce
     if loadedOnce==False:
         global actor_df
         global actor_index_df
