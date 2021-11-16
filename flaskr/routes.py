@@ -1,5 +1,4 @@
 # import dependencies
-from sklearn.linear_model import ridge_regression
 from . import app
 # import dependencies and use Flask to render a template, redirecting to another url, and creating a URL
 from flask import Flask, request, render_template, session, redirect, jsonify, url_for
@@ -12,6 +11,7 @@ import plotly
 import plotly.express as px
 import numpy as np
 import os
+# from sklearn.linear_model import ridge_regression
 
 
 # create engine to pull in data
@@ -21,9 +21,9 @@ engine = create_engine('postgresql+psycopg2://postgres:moviesondemand@moviesonde
 ridge_test_results  = os.path.join(app.static_folder, "ridge_test_results.csv")
 
 #creating global variables
-# global actor_df
-# global actor_index_df
-# global actor_movies
+global actor_df
+global actor_index_df
+global actor_movies
 # global loadedOnce
 # loadedOnce=False
 
