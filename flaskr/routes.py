@@ -21,10 +21,11 @@ engine = create_engine('postgresql+psycopg2://postgres:moviesondemand@moviesonde
 ridge_test_results  = os.path.join(app.static_folder, "ridge_test_results.csv")
 
 #creating global variables
-global actor_df
-global actor_index_df
-global actor_movies
+# global actor_df
+# global actor_index_df
+# global actor_movies
 # global loadedOnce
+# loadedOnce=False
 
 # df = pd.read_csv(ridge_test_results, low_memory=False)
 # print(df)

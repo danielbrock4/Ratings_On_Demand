@@ -28,7 +28,7 @@
                             <li class="list-group-item">Flask</li>
                             <li class="list-group-item">Heroku</li>
                             <li class="list-group-item">HTML/CSS</li>
-                            <li class="list-group-item">Algorithims: Linear & Regression, XGBoost</li>
+                            <li class="list-group-item">Algorithims: Linear & Ridge Regression, XGBoost</li>
                             
                     </div>
                 </div>
@@ -47,7 +47,6 @@
                         </p>
                         <a href="https://github.com/danielbrock4/Ratings_On_Demand" class="btn btn-primary border-dark">GitHub</a>
                         <a href="https://github.com/danielbrock4/Ratings_On_Demand/tree/main/resources" class="btn btn-primary border-dark">Data Sources</a>
-                        <!-- MISSING -->
                         <a href="https://docs.google.com/presentation/d/1RqcdU3vLPqZ9CNDki9j3r28mJyeZuCQkzV43hPen5X8" class="btn btn-primary border-dark">Presentation Slides</a>
                     </div>
                 </div>
@@ -85,7 +84,7 @@
                 <div class="card m-auto" data-aos="fade-up">
                   <img class="card-img-top" src="../static/images/headshot_emilio.jpg" alt="Card image cap">
                   <div class="card-body">
-                    <h5 class="card-title">Emilio Caraballo Castro</h5>
+                    <h5 class="card-title">Emilio Castro</h5>
                     <a href="https://github.com/Emilio-2021" class="card-link">Github</a>
                     <a href="https://www.linkedin.com/in/emiliocaraballocastro" class="card-link">LinkedIn</a>
                   </div>
@@ -108,31 +107,114 @@
         <div class="row p-2">
             <div class="card mb-4 m-auto text-black bg-warning" style="width: 100%;" data-aos="fade-left">
                 <div class="card-body">
-                    <h2 class="card-title text-center">Project Results</h2>
+                    <h2 class="card-title text-center">Machine Learning Results</h2>      
                 </div>
             </div>
         </div>
 
         <div class="row p-2">
             <div class="card mb-4 m-auto" style="width: 90%;" data-aos="fade-left">
-                <div class="card-header">Ridge Regression Results</div>
+                <div class="card-header">Step 1: Features & Variables Selection</div>
                 <div class="card-body">
+                    <p class="card-text">IMDB ratings are entered by registered IMDb users who can vote from 1-10 on every released title in the IMDB database. Individual votes are then aggregated as a single IMDB rating, visible on the title's main page.</p>
+                    <h5 class="card-title">Features & Variables Chosen For Our Machine Learning Model</h5>
+                    <img class="card-img" src="../static/images/image2.jpg" alt="Card image cap">
+                    <h5 class="card-title">Explore Our Datasets</h5>
+                    <a href="https://ratingsondemand.herokuapp.com/search_bar" class="btn btn-primary border-dark">Actor & Movie Search Bar</a>
+                    <a href="https://github.com/danielbrock4/Ratings_On_Demand/tree/main/resources" class="btn btn-primary border-dark">Cleaned Data Sources</a>
+                </div>    
+            </div>
+        </div>
+
+        <div class="row p-2">
+            <div class="card mb-4 m-auto" style="width: 90%;" data-aos="fade-left">
+                <div class="card-header">Step 2: Reviewing Correlation</div>
+                <div class="card-body">
+                    <p class="card-text">We needed to identify any correlations among the features in our dataset. With this knowledge, we may decide to add or reduce features to the datasets used in our machine learning models. Per our observations, there were no correlations more robust than 0.50. In general, correlations between .2 and .5 are considered to have low correlation. Correlations below .2 are considered to have little to no correlation. Correlation more significant than .5 has a strong correlation.</p>
+                    <p class="card-text">The visualization below shows a correlation matrix filtered with correlations greater than .2 or less than -.2</p>
+                    <img class="card-img" src="../static/images/Corr_Matrix.png" alt="Card image cap">
+                    <p class="card-text">Given the relatively low correlations, we decided it was best to use all features in our data set for the machine learning models. Note that we identified multiple independent features that were highly correlated with each other, the risk of multicollinearity was recognized.</p>        
+                    <h5>Highest Correlated Features</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Duration (Minutes)</li>
+                            <li class="list-group-item">Budget (Millions)</li>
+                            <li class="list-group-item">Count of Oscar Nominated Actors</li>
+                            <li class="list-group-item">Drama Genre</li>
+                            <li class="list-group-item">Comedy genre</li>
+                </div>    
+            </div>
+        </div>
+
+        <div class="row p-2">
+            <div class="card mb-4 m-auto" style="width: 90%;" data-aos="fade-left">
+                <div class="card-header">Step 3: Machine Learning Selection</div>
+                <div class="card-body">
+                    <p class="card-text">Given that we are trying to predict a continuous dependent variable from several independent variables, we chose to test 3 different regression models, including: Multiple Linear Regression, Ridge Regression, XGBoost Regression </p>
+                    <p class="card-text">Using R-Squared and Mean Absolute Error (MAE), Ridge Regression slightly edged over Linear Regression (as seen below).</p>
+                    <img class="card-img" src="../static/images/ML_Performance_Comp.png" alt="Card image cap">
+                    <p class="card-text">Ridge regression is traditionally used to model datasets that suffer from multicollinearity, which we recognized in the feature correlation analysis. Other important ridge regression features and assumptions include:</p>        
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Utilization of L2 regularization to help prevent multicollinearity</li>
+                        <li class="list-group-item">The assumptions of Ridge Regression are consistent with Linear Regression except for the distribution of errors to be considered normal, which should not be assumed</li>
+                </div>    
+            </div>
+        </div>
+
+        <div class="row p-2">
+            <div class="card mb-4 m-auto" style="width: 90%;" data-aos="fade-left">
+                <div class="card-header">Machine Learning Results</div>
+                <div class="card-body">
+                    <p class="card-text">R Squared: 0.322</p>
+                    <p class="card-text">Mean Absolute Error (MAE): 0.596</p>
+                    <p class="card-text">Root Mean Square Error (RMSE): 0.783</p>
                     <div id="scatter"></div>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Quibusdam beatae eos esse hic tempore, itaque dolor quod. Eligendi debitis 
-                        doloremque itaque architecto velit autem suscipit ut laborum optio maxime at 
-                        facere perspiciatis quae molestiae nemo, saepe impedit. Quaerat corporis eius 
-                        libero fugit. Debitis non nobis repudiandae ex soluta vero repellendus omnis eos, 
-                        voluptate mollitia dolorem asperiores sint itaque consequuntur voluptatum totam 
-                        fugit aut nemo maiores! Laboriosam quidem error possimus nobis eligendi dolor aut 
-                        ullam voluptas officiis similique placeat modi, eaque voluptates dolores odit optio, 
-                        pariatur molestias. Eum praesentium totam error aliquam,
-                        tempore in quia exercitationem! Temporibus corporis asperiores esse ipsum?</p>
-                </div>
+                    <p class="card-text">Based on the above scatter plot, it appears that most ratings between 5 and 7 can be predicted with relative accuracy shown through the tighter fit</p>
+                    <p class="card-text">There appears to be a slight lean towards over predicting ratings in the 3.5-4.5 range, which is the most likely result of the intercept</p>
+                    <p class="card-text">Taking a look at some of the more significant errors using the interactive scatter plot found on our website, we identified a few trends:</p>         
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Animated films tend to be under-predicted by a vast degree; two examples include "Up" and "Wall-E." This potentially indicates we did not have an excellent feature to capture what makes an animated film better than others; further analysis would be needed to confirm</li>
+                        <li class="list-group-item">Another outlier was the highest prediction the model produced, which appears to be driven by the number of actors with oscar nominations; they had more than any other movie ("Irishman") in our test data, 4 to be exact. This feels more like a one-off exception however, further analysis and testing would need to be completed; this could potentially mean we need to look at different machine learning models</li>
+                </div>    
+            </div>
+        </div>
+
+        <div class="row p-2">
+            <div class="card mb-4 m-auto" style="width: 90%;" data-aos="fade-left">
+                <div class="card-header">Most Influential Features</div>
+                <div class="card-body">
+                    <p class="card-text">The following features have been ranked by their associated coefficients to show what's most important when predicting IMDB ratings when using this particular model</p>
+                    <img class="card-img" src="../static/images/Top10_Features.png" alt="Card image cap">
+                </div>    
             </div>
         </div>
 
 
+        <div class="row p-2">
+            <div class="card mb-4 m-auto" style="width: 90%;" data-aos="fade-left">
+                <div class="card-header">Results Summary</div>
+                <div class="card-body">
+                    <p class="card-text">Overall, it's not easy predicting human behavior. Still, we believe that an MAE of .596 indicates that we could provide an investor with a decent range of how movie ideas would score in the IMDb rating database</p>
+                    <p class="card-text">Can we accurately predict IMDb ratings with general movie attributes?</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Based on the MAE, on average, we would be able to predict an IMDB rating within 60 bps +/- of what the actual rating currently is or would be</li>
+                        <li class="list-group-item">Comparing the RMSE and MAE, the RMSE is approximately 19 bps higher than the MAE, which indicates there are a few large and infrequent errors</li>
+                </div>    
+            </div>
+        </div>
+
+        <div class="row p-2">
+            <div class="card mb-4 m-auto" style="width: 90%;" data-aos="fade-left">
+                <div class="card-header">Future Considerations to Improve Accuracy</div>
+                <div class="card-body">
+                    <p class="card-text">Changes We Would Make</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Expand award nominations for actors and directions to include Emmy's and Golden Globes.</li>
+                        <li class="list-group-item">Rather than utilize oscar-nominated directors, use a top 20 list of movies associated with these directors because our data appears to show a boost in ratings regardless of other features</li>
+                        <li class="list-group-item">Identify features to predict animated films better. Productions companies might be a good feature to start with</li>
+                        <li class="list-group-item">Test additional regression models</li>
+                </div>    
+            </div>
+        </div>
 
         <!-- <div class="row p-2">
             <div class="card mb-4 m-auto" style="width: 90%;" data-aos="fade-left">
@@ -151,84 +233,9 @@
                         tempore in quia exercitationem! Temporibus corporis asperiores esse ipsum?</p>
                 </div>
             </div>
-        </div>
-
-        <div class="row p-2">
-            <div class="card mb-4 m-auto" style="width: 90%;" data-aos="fade-left">
-                <div class="card-header">Graph 1</div>
-                <div class="card-body">
-                    <div id="chart1"></div>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Quibusdam beatae eos esse hic tempore, itaque dolor quod. Eligendi debitis 
-                        doloremque itaque architecto velit autem suscipit ut laborum optio maxime at 
-                        facere perspiciatis quae molestiae nemo, saepe impedit. Quaerat corporis eius 
-                        libero fugit. Debitis non nobis repudiandae ex soluta vero repellendus omnis eos, 
-                        voluptate mollitia dolorem asperiores sint itaque consequuntur voluptatum totam 
-                        fugit aut nemo maiores! Laboriosam quidem error possimus nobis eligendi dolor aut 
-                        ullam voluptas officiis similique placeat modi, eaque voluptates dolores odit optio, 
-                        pariatur molestias. Eum praesentium totam error aliquam,
-                        tempore in quia exercitationem! Temporibus corporis asperiores esse ipsum?</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row p-2">
-            <div class="card mb-4 m-auto" style="width: 90%;" data-aos="fade-left">
-                <div class="card-header">Graph 2</div>
-                <div class="card-body">
-                    <div id="chart2"></div>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Quibusdam beatae eos esse hic tempore, itaque dolor quod. Eligendi debitis 
-                        doloremque itaque architecto velit autem suscipit ut laborum optio maxime at 
-                        facere perspiciatis quae molestiae nemo, saepe impedit. Quaerat corporis eius 
-                        libero fugit. Debitis non nobis repudiandae ex soluta vero repellendus omnis eos, 
-                        voluptate mollitia dolorem asperiores sint itaque consequuntur voluptatum totam 
-                        fugit aut nemo maiores! Laboriosam quidem error possimus nobis eligendi dolor aut 
-                        ullam voluptas officiis similique placeat modi, eaque voluptates dolores odit optio, 
-                        pariatur molestias. Eum praesentium totam error aliquam,
-                        tempore in quia exercitationem! Temporibus corporis asperiores esse ipsum?</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row p-2">
-            <div class="card mb-4 m-auto" style="width: 90%;" data-aos="fade-left">
-                <div class="card-header">Graph 3</div>
-                <div class="card-body">
-                    <div id="chart3"></div>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Quibusdam beatae eos esse hic tempore, itaque dolor quod. Eligendi debitis 
-                        doloremque itaque architecto velit autem suscipit ut laborum optio maxime at 
-                        facere perspiciatis quae molestiae nemo, saepe impedit. Quaerat corporis eius 
-                        libero fugit. Debitis non nobis repudiandae ex soluta vero repellendus omnis eos, 
-                        voluptate mollitia dolorem asperiores sint itaque consequuntur voluptatum totam 
-                        fugit aut nemo maiores! Laboriosam quidem error possimus nobis eligendi dolor aut 
-                        ullam voluptas officiis similique placeat modi, eaque voluptates dolores odit optio, 
-                        pariatur molestias. Eum praesentium totam error aliquam,
-                        tempore in quia exercitationem! Temporibus corporis asperiores esse ipsum?</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row p-2">
-            <div class="card mb-4 m-auto" style="width: 90%;" data-aos="fade-left">
-                <div class="card-header">Graph 4</div>
-                <div class="card-body">
-                    <div id="chart4"></div>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Quibusdam beatae eos esse hic tempore, itaque dolor quod. Eligendi debitis 
-                        doloremque itaque architecto velit autem suscipit ut laborum optio maxime at 
-                        facere perspiciatis quae molestiae nemo, saepe impedit. Quaerat corporis eius 
-                        libero fugit. Debitis non nobis repudiandae ex soluta vero repellendus omnis eos, 
-                        voluptate mollitia dolorem asperiores sint itaque consequuntur voluptatum totam 
-                        fugit aut nemo maiores! Laboriosam quidem error possimus nobis eligendi dolor aut 
-                        ullam voluptas officiis similique placeat modi, eaque voluptates dolores odit optio, 
-                        pariatur molestias. Eum praesentium totam error aliquam,
-                        tempore in quia exercitationem! Temporibus corporis asperiores esse ipsum?</p>
-                </div>
-            </div>
-        </div>
-    </div>     -->
+        </div>  -->
+    
+    </div>    
 
 
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -240,14 +247,6 @@
         // var graphs1 = {{ graph1JSON | safe}};
         // Plotly.plot("chart1", graphs1,{});
 
-        // var graphs2 = {{ graph2JSON | safe}};
-        // Plotly.plot("chart2", graphs2,{});
-
-        // var graphs3 = {{ graph3JSON | safe}};
-        // Plotly.plot("chart3", graphs3,{});
-
-        // var graphs4 = {{ graph4JSON | safe}};
-        // Plotly.plot("chart4", graphs4,{});
     </script> 
 
 {% endblock %}
