@@ -2,12 +2,12 @@
 from sklearn.linear_model import ridge_regression
 from flaskr import app
 # import dependencies and use Flask to render a template, redirecting to another url, and creating a URL
-#from flask import render_template, url_for, redirect, jsonify
-from flask import Flask, request, render_template, session, redirect
+from flask import Flask, request, render_template, session, redirect, jsonify, url_for
 import pandas as pd
 from pandas import DataFrame, read_csv
 from sqlalchemy import create_engine
 import json 
+import plot
 import plotly
 import plotly.express as px
 import numpy as np
