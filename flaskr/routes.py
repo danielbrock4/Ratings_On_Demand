@@ -1,6 +1,6 @@
 # import dependencies
 from sklearn.linear_model import ridge_regression
-from flaskr import app
+from . import app
 # import dependencies and use Flask to render a template, redirecting to another url, and creating a URL
 from flask import Flask, request, render_template, session, redirect, jsonify, url_for
 import pandas as pd
@@ -33,8 +33,8 @@ ridge_test_results  = os.path.join(app.static_folder, "ridge_test_results.csv")
 @app.route("/")
 def index():
     
-    # global loadedOnce
-    # loadedOnce=False
+    global loadedOnce
+    loadedOnce=False
     
     df = pd.read_csv(ridge_test_results, low_memory=False)
     fig = px.scatter(df, 
